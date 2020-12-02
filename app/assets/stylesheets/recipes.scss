@@ -1,3 +1,126 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// _top-content.html.erb
+
+$mainColor: rgb(197, 136, 56);
+
+.content {
+  padding: 0 200px;
+  color: $mainColor;
+}
+
+.top-content {
+  padding-bottom: 20px;
+}
+
+.top-right {
+  font-size: 13px;
+  text-align: right;
+
+  .text {
+    color: $mainColor;
+
+  }
+}
+
+.top-logo {
+  height: 180px;
+  width: 330px;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0 40px 0;
+}
+
+.top-search {
+  text-align: right;
+
+  .search-form {
+    height: 32px;
+    width: 170px;
+    border: 1px solid $mainColor;
+  }
+  
+  .search-button {
+    font-size: 23px;
+    color: $mainColor;
+    border: none;
+    background-color: white;
+    &:hover {
+      cursor: pointer;
+
+    }
+  }
+}
+
+
+// _menu-bar.html.erb
+
+.menu-bar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  background-color:$mainColor;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.menu-bar-element {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+
+// side-bar.html.erb
+
+.main-contents{
+  display: flex;
+}
+
+.side-bar {
+  width: 20%;
+  border: 1px solid $mainColor;
+  padding: 30px 10px;
+  margin-right: 20px;
+}
+
+.list-title {
+  font-size: 23px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.list {
+  font-size: 18px;
+  margin: 0 10px 20px;
+
+  .list-item {
+    margin-bottom: 5px;
+  }
+}
+
+.list-add-form {
+  text-align: center;
+
+  .list-field {
+    height: 30px;
+    width: 170px;
+    border: 1px solid $mainColor;
+    margin-bottom: 5px;
+  }
+
+  .list-add-button {
+    font-size: 15px;
+    height: 25px;
+    width: 60px;
+    color: white;
+    background-color: $mainColor;
+    border: none;
+    border-radius: 1ch;
+    
+    &:hover {
+      cursor: pointer;
+
+    }
+  }
+}

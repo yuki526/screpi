@@ -1,1 +1,24 @@
-<div class="side-bar">side-bar</div>
+<div class="side-bar">
+
+  <div class="list-title">お買い物リスト</div>
+
+  <ul class="list">
+    <li class="list-item">にんじん
+    </li>
+    <li class="list-item">じゃがいも
+    </li>
+    <li class="list-item">白だし
+    </li>
+    <li class="list-item">バナナ
+    </li>
+    <li class="list-item">ほうれん草
+    </li>
+  </ul>
+
+  <div class="list-add-form">
+    <%= form_with url:'/', method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, class: "list-field"%>
+      <%= f.submit '追加', class: "list-add-button" %>
+    <% end %>
+  </div>
+</div>
