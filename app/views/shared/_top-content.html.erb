@@ -1,0 +1,18 @@
+<div class="top-content">
+
+  <div class="top-right">
+    <%= link_to "すくれぴとは？", "/" %> / 
+    <%= link_to "ログアウト", "/" %>
+  </div>
+
+  <%= link_to image_tag("screpi-logo1.png", class:"top-logo"), "/" %>
+  
+  <%# 検索ボタンは一体化する予定 %>
+  <div class="top-search">
+    <%= form_with url:'/', method: :get, local: true do |f| %>
+      <%= f.text_field :keyword %>
+      <%= f.submit 's' %>
+    <% end %>
+  </div>
+
+</div>
