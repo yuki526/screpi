@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     collection do
       get 'about'
+      get 'instruction'
     end
   end 
 end
