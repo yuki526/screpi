@@ -11,6 +11,10 @@ class RecipesController < ApplicationController
   def mypage
   end
 
+  def create
+    
+  end
+
   private
   
   def authenticate
