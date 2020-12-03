@@ -1,3 +1,4 @@
 class Recipe < ApplicationRecord
-  has_rich_text :contentr
+  belongs_to :user
+  has_rich_text :content
 end
