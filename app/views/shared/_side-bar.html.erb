@@ -1,24 +1,64 @@
 <div class="side-bar">
 
-  <div class="list-title">お買い物リスト</div>
+<%# ログイン済の場合は買い物リスト、それ以外はログインフォームを表示 %>
+  <% if user_signed_in? %>
 
-  <ul class="list">
-    <li class="list-item">にんじん
-    </li>
-    <li class="list-item">じゃがいも
-    </li>
-    <li class="list-item">白だし
-    </li>
-    <li class="list-item">バナナ
-    </li>
-    <li class="list-item">ほうれん草
-    </li>
-  </ul>
+    <div class="list-title">お買い物リスト</div>
+    <ul class="list">
+      <li class="list-item">にんじん
+      </li>
+      <li class="list-item">じゃがいも
+      </li>
+      <li class="list-item">白だし
+      </li>
+      <li class="list-item">バナナ
+      </li>
+      <li class="list-item">ほうれん草
+      </li>
+    </ul>
 
-  <div class="list-add-form">
-    <%= form_with url:'/', method: :get, local: true do |f| %>
-      <%= f.text_field :keyword, class: "list-field"%>
-      <%= f.submit '追加', class: "list-add-button" %>
+    <div class="list-add-form">
+      <%= form_with url:'/', method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, class: "list-field"%>
+        <%= f.submit '追加', class: "list-add-button" %>
+      <% end %>
+    </div>
+  
+  <% else %>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <div class="label">Email</div>
+        <%= f.email_field :email, autocomplete: "email", class: "list-field" %>
+      </div>
+
+      <div class="field">
+        <div class="label">Password</div>
+        <%= f.password_field :password, autocomplete: "current-password", class: "list-field" %>
+      </div>
+
+
+      <%# if devise_mapping.rememberable? %>
+        <%# <div class="field"> %>
+          <%# f.check_box :remember_me %>
+          <%# f.label :remember_me %>
+        <%# </div> %>
+      <%# end %>
+
+      <div class="actions">
+        <%= f.submit "Log in", class: "list-add-button" %>
+      </div>
     <% end %>
-  </div>
+
+    <%# render "devise/shared/links" %>
+    
+    <div class="or">または</div>
+
+    <div class="registration">
+      <%= link_to '新 規 登 録', new_user_registration_path, class: "registration-text" %>
+    </div>
+
+  <% end %>
+
+
 </div>

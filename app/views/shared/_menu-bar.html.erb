@@ -1,9 +1,21 @@
 <div class="menu-bar">
 
-    <%= link_to "マイページ", "/", class: "menu-bar-element" %>
-    <%= link_to "レシピ追加", "/", class: "menu-bar-element" %>
+    <% if user_signed_in? %>
+        <%= link_to "マイページ", mypage_recipe_path(current_user), class: "menu-bar-element" %>
+    <% else %>
+        <div class="menu-bar-element">マイページ</div>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <%= link_to "レシピ追加", "/", class: "menu-bar-element" %>
+    <% else %>
+        <div class="menu-bar-element">レシピ追加</div>
+    <% end %>
+
     <%= link_to "詳細検索", "/", class: "menu-bar-element" %>
-    <%= link_to "使い方", "/", class: "menu-bar-element" %>
+    
+    <%= link_to "使い方", instruction_recipes_path, class: "menu-bar-element" %>
+    
     <%= link_to "分量計算機", "/", class: "menu-bar-element" %>
 
 </div>
