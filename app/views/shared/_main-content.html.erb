@@ -1,0 +1,77 @@
+<div class="main-content">
+
+  <%# 新着レシピ %>
+  <div class="new-recipes">
+    <div class="new-recipe-head">新着レシピ</div>
+
+    <div class="new-recipe-images">
+      <div class="new-recipe-image">
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/S7Xcz-BkyCI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <%= link_to '王道肉じゃが', '/', class: "recipe-title" %>
+      </div>
+      <div class="new-recipe-image">
+        <iframe width="300" height="250" src="https://www.youtube.com/embed/MENzDsn5GA4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <%= link_to 'にんじんしりしり', '/', class: "recipe-title" %>
+      </div>
+      <div class="new-recipe-image">
+        <iframe width="300" height="250" src="https://www.youtube.com/embed/AjJt858NHTM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <%= link_to 'パリパリチキンステーキ', '/', class: "recipe-title" %>
+      </div>
+    </div>
+
+  </div>
+
+  <%# image_tag("line.png", class:"line-image") %>
+
+<%# 新着ブログ %>
+  <div class="new-blogs">
+    <div class="new-blog-head">新着ブログ</div>
+
+    <div class="new-blog-articles">
+      <div class="new-blog-article">
+        <div class="article-data">
+          <div class="article-date">2020-12-2 Wed</div>
+          <div class="article-user">Posted by ゆゆゆ</div>
+        </div>
+          <%= link_to "パリパリステーキおいしすぎ！", "/", class: "article-title" %>
+      </div>
+      <div class="new-blog-article">
+        <div class="article-data">
+          <div class="article-date">2020-12-1 Tue</div>
+          <div class="article-user">Posted by さらばファン</div>
+        </div>
+          <%= link_to "しりしり器を買ったのでにんじんしりしりを作ってみた", "/", class: "article-title" %>
+      </div>
+      <div class="new-blog-article">
+        <div class="article-data">
+          <div class="article-date">2020-11-29 Sun</div>
+          <div class="article-user">Posted by コウさん</div>
+        </div>
+          <%= link_to "肉じゃがのじゃがいもは男爵？それともメークイン？はたまた…", "/", class: "article-title" %>
+      </div>
+    </div>
+  </div>
+
+    <%# image_tag("line.png", class:"line-image") %>
+
+<%# レシピランキング %>
+  <div class="recipe-rank">
+    <div class="recipe-rank-head">おいしそう！ランキング</div>
+
+      <div class="rank-recipe-images">
+          <div class="rank-recipe-image">
+            <iframe width="300" height="250" src="https://www.youtube.com/embed/xGKn7TD9jaM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <%= link_to '至高の唐揚げ', '/', class: "recipe-title" %>
+          </div>
+          <div class="rank-recipe-image">
+            <iframe width="300" height="250" src="https://www.youtube.com/embed/JB1LKl_5Mo4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <%= link_to 'チキンマカロニグラタン', '/', class: "recipe-title" %>
+          </div>
+          <div class="rank-recipe-image">
+            <iframe width="300" height="250" src="https://www.youtube.com/embed/KtAhYjjf9ak" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <%= link_to '炒飯', '/', class: "recipe-title" %>
+          </div>
+        </div>
+      </div>
+
+</div>

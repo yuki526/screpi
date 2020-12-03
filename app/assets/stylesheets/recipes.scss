@@ -1,3 +1,257 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
+// _top-content.html.erb
+
+$mainColor: rgb(197, 136, 56);
+$subColor: rgb(151, 104, 41);
+
+.content {
+  padding: 0 180px;
+  color: $mainColor;
+}
+
+.top-content {
+  padding-bottom: 20px;
+}
+
+.top-right {
+  font-size: 13px;
+  text-align: right;
+  margin: 15px 5px 0 0;
+
+  .text {
+    color: $mainColor;
+
+  }
+}
+
+.top-logo {
+  height: 110px;
+  width: 330px;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0 40px 0;
+}
+
+.top-search {
+  text-align: right;
+
+  .search-form {
+    height: 32px;
+    width: 170px;
+    border: 1px solid $mainColor;
+  }
+  
+  .search-button {
+    font-size: 23px;
+    color: $mainColor;
+    border: none;
+    background-color: white;
+    &:hover {
+      cursor: pointer;
+
+    }
+  }
+}
+
+
+// _menu-bar.html.erb
+
+.menu-bar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  background-color: $subColor;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.menu-bar-element {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+
+// side-bar.html.erb
+
+.main-contents{
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.side-bar {
+  width: 18%;
+  background-color: white;
+  border: 1px solid $mainColor;
+  padding: 30px 0px;
+  margin: 0 20px 100px 0;
+}
+
+.list-title {
+  font-size: 22px;
+  margin: 30px 0;
+  text-align: center;
+  color: $subColor;
+}
+
+.list {
+  font-size: 17px;
+  margin: 0 10px 50px;
+  list-style: none;
+
+  .list-item {
+    margin-bottom: 5px;
+  }
+}
+
+.list-add-form {
+
+  .list-field {
+    height: 30px;
+    width: 150px;
+    border: 1px solid $mainColor;
+    margin: 0 auto 5px;
+    display: block;
+  }
+
+  .list-add-button {
+    font-size: 15px;
+    height: 25px;
+    width: 60px;
+    color: white;
+    background-color: $subColor;
+    border: none;
+    border-radius: 1ch;
+    display: block;
+    margin: 0 auto 0;
+    
+    &:hover {
+      cursor: pointer;
+
+    }
+  }
+}
+
+
+// main-content.html
+
+.main-content {
+  width: 70%;
+
+  .line-image {
+    display: block;
+    margin: 0 auto 40px;
+    width: 60%;
+    height: 25px;
+  }
+
+  .new-recipes{
+    margin-bottom: 70px;
+
+    .new-recipe-head {
+      font-size: 30px;
+      margin: 5px 0 20px 0;
+      color: $subColor;
+    }
+    
+    .new-recipe-images {
+      display: flex;
+    
+      .new-recipe-image {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .new-blogs {
+    margin-bottom: 70px;
+
+    .new-blog-head {
+      font-size: 30px;
+      margin: 5px 0 20px 0;
+      color: $subColor;
+
+    }
+
+    .new-blog-articles {
+      font-size: 23px;
+      margin-left: 20px;
+      
+      .new-blog-article {
+        margin-bottom: 30px;
+
+        .article-data{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 6px;
+        }
+        
+        .article-title {
+          color: $subColor;
+          display: block;
+        }
+      }
+    }
+  }
+  
+  .recipe-rank {
+    margin-bottom: 70px;
+
+    .recipe-rank-head {
+      font-size: 30px;
+      margin: 5px 0 20px 0;
+      color: $subColor;
+    }
+
+    .rank-recipe-images {
+      display: flex;
+
+      .rank-recipe-image {
+        margin-right: 10px;
+      }
+
+    }
+  }
+}
+
+.line-image {
+  display: block;
+  margin: 0 auto 70px;
+}
+
+.bottom-content {
+  background-color: $subColor;
+  width: 100%;
+  height: 100px;
+
+  .bottom-logo {
+    height: 50px;
+    display: block;
+    padding-top: 30px;
+    margin: 0 auto;
+  }
+
+  .bottom-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+}
+
+.recipe-title {
+  text-decoration: none;
+  font-size: 20px;
+  color: $subColor;
+  display: block
+}
