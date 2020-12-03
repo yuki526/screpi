@@ -2,7 +2,7 @@
 
   <%# 左上メニュー %>
   <div class="top-right">
-    <%= link_to "すくれぴとは？", recipes_about_path, class: "text" %> / 
+    <%= link_to "すくれぴとは？", about_recipes_path, class: "text" %> / 
     <% if user_signed_in? %>
       <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "text" %>
     <% else %>
