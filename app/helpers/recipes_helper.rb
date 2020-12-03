@@ -11,4 +11,3 @@ module RecipesHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 end
-end
