@@ -60,3 +60,4 @@ end
 gem 'devise'
 gem 'carrierwave'
 gem 'active_hash'
+gem 'kaminari'

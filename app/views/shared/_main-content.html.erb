@@ -14,6 +14,8 @@
         </div>
       <% end %>
     </div>
+      <div class="page-nation">
+      </div>
 
     <div class="new-recipe-head">新着レシピ</div>
 
@@ -23,6 +25,7 @@
         <%= link_to recipe.site_type.name, recipe.URL, class:"recipe-link recipe-site-link" %>
         </div>
     <% end %>
+    <%= paginate @new_recipes %>
   </div>
   <%# image_tag("line.png", class:"line-image") %>
 

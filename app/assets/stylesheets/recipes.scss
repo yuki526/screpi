@@ -198,7 +198,7 @@ $subColor: rgb(151, 104, 41);
     
     .new-recipe-images {
       display: flex;
-      margin-bottom: 70px;
+      margin-bottom: 20px;
       
     
       .new-recipe-image {
@@ -226,6 +226,15 @@ $subColor: rgb(151, 104, 41);
         }
       }
     }
+  }
+
+  .page-nation {
+    margin-bottom: 70px;
+  }
+
+  .pagination {
+    color: $mainColor;
+    text-align: right;
   }
 
   .new-blogs {
