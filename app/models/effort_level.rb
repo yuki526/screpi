@@ -7,4 +7,7 @@ class EffortLevel < ActiveHash::Base
     { id: 5, name: '☆☆☆☆'},
     { id: 6, name: '☆☆☆☆☆'}
   ]
+
+  include ActiveHash::Associations
+    has_many :recipes
 end

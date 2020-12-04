@@ -11,4 +11,7 @@ class SiteType < ActiveHash::Base
     { id: 9, name: 'レタスクラブ'},
     { id: 10, name: 'それ以外'}
   ]
+
+  include ActiveHash::Associations
+    has_many :recipes
 end
