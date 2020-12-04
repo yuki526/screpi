@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       get 'instruction'
     end
   end 
+
+  resources :blogs, only: [:new, :create]
 end
