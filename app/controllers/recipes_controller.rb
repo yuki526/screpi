@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 
   
   def index
+    @new_recipes = Recipe.order("created_at DESC").limit(10)
   end
   
   def about

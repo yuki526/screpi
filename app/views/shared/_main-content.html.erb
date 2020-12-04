@@ -4,6 +4,10 @@
   <div class="new-recipes">
     <div class="new-recipe-head">新着レシピ</div>
 
+    <% @new_recipes.each do |recipe|%>
+      <%= recipe.title %>
+    <% end %>
+
     <div class="new-recipe-images">
       <div class="new-recipe-image">
           <iframe width="300" height="250" src="https://www.youtube.com/embed/S7Xcz-BkyCI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
