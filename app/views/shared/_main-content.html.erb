@@ -2,27 +2,28 @@
 
   <%# 新着レシピ %>
   <div class="new-recipes">
-    <div class="new-recipe-head">新着動画</div>
 
+    <div class="new-recipe-head">新着動画</div>
     <div class="new-recipe-images">
       <% @new_videos.each do |video|%>
         <div class="new-recipe-image">
             <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= video.URL %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <a class="recipe-title">
-            <%= video.title %>
-          </a>
+            <%= link_to video.title, recipe_path(video.id), class:"recipe-title" %>
+            <a class="star">★★★★★</a>
+            
         </div>
       <% end %>
     </div>
 
     <div class="new-recipe-head">新着レシピ</div>
 
-      <% @new_recipes.each do |recipe| %>
-        <a class="recipe-title"><%= recipe.title %></a>
-        <%= link_to recipe.site_type.name, recipe.URL %>
-      <% end %>
-    </div>
-
+    <% @new_recipes.each do |recipe| %>
+      <div class="new-recipe">
+        <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
+        <%= link_to recipe.site_type.name, recipe.URL, class:"recipe-link recipe-site-link" %>
+        </div>
+    <% end %>
+  </div>
   <%# image_tag("line.png", class:"line-image") %>
 
 <%# 新着ブログ %>
