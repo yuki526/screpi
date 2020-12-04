@@ -18,10 +18,14 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    if @recipe.save
-      redirect_to root_path and return
-    else
+    unless @recipe.valid?
       render :new
+    else
+      if @recipe.site_type_id == 2
+        @recipe.URL = @recipe.URL.last(11)
+      end
+      @recipe.save
+      redirect_to root_path and return
     end
   end
 

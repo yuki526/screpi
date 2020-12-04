@@ -2,10 +2,15 @@
 
   <%# 新着レシピ %>
   <div class="new-recipes">
-    <div class="new-recipe-head">新着レシピ</div>
+    <div class="new-recipe-head">新着レシピ動画</div>
 
     <% @new_recipes.each do |recipe|%>
-      <%= recipe.title %>
+      <div class="new-recipe-image">
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= recipe.URL %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="recipe-title">
+        <%= recipe.title %>
+      </div>
     <% end %>
 
     <div class="new-recipe-images">
