@@ -2,33 +2,26 @@
 
   <%# 新着レシピ %>
   <div class="new-recipes">
-    <div class="new-recipe-head">新着レシピ動画</div>
-
-    <% @new_recipes.each do |recipe|%>
-      <div class="new-recipe-image">
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= recipe.URL %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="recipe-title">
-        <%= recipe.title %>
-      </div>
-    <% end %>
+    <div class="new-recipe-head">新着動画</div>
 
     <div class="new-recipe-images">
-      <div class="new-recipe-image">
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/S7Xcz-BkyCI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <%= link_to '王道肉じゃが', '/', class: "recipe-title" %>
-      </div>
-      <div class="new-recipe-image">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/MENzDsn5GA4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <%= link_to 'にんじんしりしり', '/', class: "recipe-title" %>
-      </div>
-      <div class="new-recipe-image">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/AjJt858NHTM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <%= link_to 'パリパリチキンステーキ', '/', class: "recipe-title" %>
-      </div>
+      <% @new_videos.each do |video|%>
+        <div class="new-recipe-image">
+            <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= video.URL %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <a class="recipe-title">
+            <%= video.title %>
+          </a>
+        </div>
+      <% end %>
     </div>
 
-  </div>
+    <div class="new-recipe-head">新着レシピ</div>
+
+      <% @new_recipes.each do |recipe| %>
+        <a class="recipe-title"><%= recipe.title %></a>
+        <%= link_to recipe.site_type.name, recipe.URL %>
+      <% end %>
+    </div>
 
   <%# image_tag("line.png", class:"line-image") %>
 

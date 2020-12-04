@@ -3,7 +3,8 @@ class RecipesController < ApplicationController
 
   
   def index
-    @new_recipes = Recipe.order("created_at DESC").limit(10)
+    @new_videos = Recipe.where(site_type_id: 2).order("created_at DESC").limit(10)
+    @new_recipes = Recipe.where.not(site_type_id: 2).order("created_at DESC").limit(10)
   end
   
   def about
