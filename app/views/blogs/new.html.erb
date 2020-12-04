@@ -1,1 +1,30 @@
-new
+<div class="content">
+  <%= render "shared/top-content" %>
+  <%= render "shared/menu-bar" %>
+  <div class="main-contents">
+    <%= render "shared/side-bar" %>
+
+
+    <div class="recipe">
+      <div class="new-title">ブログ追加</div>
+      <div class="new-recipe-form">
+      <%= form_with model: [@recipe, @blog], local: true do |f| %>
+        <div class="new-recipe-title">title</div>
+        <%= f.text_field :title, class: "new-recipe-form-field"%>
+
+        <div class="recipe-content">本文</div>
+        <%= f.rich_text_area :content, class: "new-recipe-rich-text-form"%>
+
+
+        <%= f.submit '追加', class: "list-add-button" %>
+      <% end %>
+    </div>
+
+    </div>
+  
+  
+  </div>
+  <div class="bottom-content">
+    <%= render "shared/bottom-content"%>
+  </div>
+</div>
