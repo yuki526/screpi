@@ -3,14 +3,16 @@ Rails.application.routes.draw do
   root 'recipes#index'
 
   resources :recipes do
+    resources :blogs, only: [:new, :create]
+
     member do
       get 'mypage'
     end
+    
     collection do
       get 'about'
       get 'instruction'
     end
   end 
 
-  resources :blogs, only: [:new, :create]
 end
