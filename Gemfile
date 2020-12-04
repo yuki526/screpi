@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -59,3 +59,8 @@ end
 
 gem 'devise'
 gem 'carrierwave'
+gem 'active_hash'
+gem 'kaminari'
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+gem 'awesome_print', '~> 1.8'
+gem 'bullet', group: 'development'

@@ -7,7 +7,7 @@
     <% end %>
 
     <% if user_signed_in? %>
-        <%= link_to "レシピ追加", "/", class: "menu-bar-element" %>
+        <%= link_to "レシピ追加", new_recipe_path, class: "menu-bar-element" %>
     <% else %>
         <div class="menu-bar-element">レシピ追加</div>
     <% end %>

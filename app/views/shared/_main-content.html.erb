@@ -2,25 +2,31 @@
 
   <%# 新着レシピ %>
   <div class="new-recipes">
+
+    <div class="new-recipe-head">新着動画</div>
+    <div class="new-recipe-images">
+      <% @new_videos.each do |video|%>
+        <div class="new-recipe-image">
+            <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= video.URL %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <%= link_to video.title, recipe_path(video.id), class:"recipe-title" %>
+            <a class="star">★★★★★</a>
+            
+        </div>
+      <% end %>
+    </div>
+      <div class="page-nation">
+      </div>
+
     <div class="new-recipe-head">新着レシピ</div>
 
-    <div class="new-recipe-images">
-      <div class="new-recipe-image">
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/S7Xcz-BkyCI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <%= link_to '王道肉じゃが', '/', class: "recipe-title" %>
-      </div>
-      <div class="new-recipe-image">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/MENzDsn5GA4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <%= link_to 'にんじんしりしり', '/', class: "recipe-title" %>
-      </div>
-      <div class="new-recipe-image">
-        <iframe width="300" height="250" src="https://www.youtube.com/embed/AjJt858NHTM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <%= link_to 'パリパリチキンステーキ', '/', class: "recipe-title" %>
-      </div>
-    </div>
-
+    <% @new_recipes.each do |recipe| %>
+      <div class="new-recipe">
+        <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
+        <%= link_to recipe.site_type.name, recipe.URL, class:"recipe-link recipe-site-link" %>
+        </div>
+    <% end %>
+    <%= paginate @new_recipes %>
   </div>
-
   <%# image_tag("line.png", class:"line-image") %>
 
 <%# 新着ブログ %>

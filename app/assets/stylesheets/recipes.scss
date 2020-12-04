@@ -178,7 +178,7 @@ $subColor: rgb(151, 104, 41);
 // main-content.html
 
 .main-content {
-  width: 70%;
+  width: 82%;
 
   .line-image {
     display: block;
@@ -198,11 +198,43 @@ $subColor: rgb(151, 104, 41);
     
     .new-recipe-images {
       display: flex;
+      margin-bottom: 20px;
+      
     
       .new-recipe-image {
         margin-right: 10px;
       }
     }
+
+    .new-recipe {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dotted $mainColor;
+      padding: 10px 0 10px;
+      font-size: 23px;
+      margin: 0 0 10px 20px; 
+      text-decoration: none;
+      color: $subColor; 
+      
+      .recipe-link {
+        text-decoration: none;
+        color: $subColor;
+
+        &.recipe-site-link {
+          font-size: 19px;
+          padding-top: 12px;
+        }
+      }
+    }
+  }
+
+  .page-nation {
+    margin-bottom: 70px;
+  }
+
+  .pagination {
+    color: $mainColor;
+    text-align: right;
   }
 
   .new-blogs {
@@ -282,7 +314,7 @@ $subColor: rgb(151, 104, 41);
 
 .recipe-title {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   color: $subColor;
   display: block
 }
