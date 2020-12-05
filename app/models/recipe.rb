@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  has_many :blogs
   has_rich_text :content
 
   extend ActiveHash::Associations::ActiveRecordExtensions
