@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :recipes
   has_many :recipe_comments
+  has_many :blog_comments
 end
