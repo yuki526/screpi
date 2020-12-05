@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root 'recipes#index'
 
   resources :recipes do
-    resources :blogs, only: [:new, :create]
-
     resources :recipe_commemts, only: [:create]
+
+    resources :blogs, only: [:new, :create] do
+      resources :blog_comments, only: [:create]
+    end
 
     member do
       get 'mypage'
