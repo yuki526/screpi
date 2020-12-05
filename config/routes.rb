@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :blogs, only: [:new, :create]
 
+    resources :recipe_commemts, only: [:create]
+
     member do
       get 'mypage'
     end
