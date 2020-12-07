@@ -14,18 +14,19 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @form_recipe_ingredient = FormRecipeIngredient.new
   end
-
+  
   def create
-    @recipe = Recipe.new(recipe_params)
-    unless @recipe.valid?
+    @form_recipe_ingredient = FormRecipeIngredient.new(recipe_params)
+    unless @form_recipe_ingredient.valid?
       render :new
     else
-      if @recipe.site_type_id == 2
-        @recipe.URL = @recipe.URL.last(11)
+      if @form_recipe_ingredient.site_type_id == 2
+        @form_recipe_ingredient.url = @form_recipe_ingredient.url.last(11)
       end
-      @recipe.save
+      binding.pry
+      @form_recipe_ingredient.save
       redirect_to root_path and return
     end
   end
@@ -41,7 +42,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :URL, :site_type_id, :effort_level_id, :content).merge(user_id: current_user.id)
+    params.require(:form_recipe_ingredient).permit(:title, :url, :site_type_id, :effort_level_id, :content, name: []).merge(user_id: current_user.id)
   end
 
 end

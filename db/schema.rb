@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_053755) do
+ActiveRecord::Schema.define(version: 2020_12_07_100122) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_053755) do
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "URL", null: false
+    t.string "url", null: false
     t.integer "site_type_id", null: false
     t.integer "effort_level_id", null: false
     t.bigint "user_id", null: false
