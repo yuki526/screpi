@@ -30,17 +30,17 @@ class RecipesController < ApplicationController
     if @form_recipe_ingredient.site_type_id == "2"
       @form_recipe_ingredient.url = @form_recipe_ingredient.url.last(11)
     end
-    binding.pry
     @form_recipe_ingredient.save
     redirect_to root_path and return
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    @ingredients = @recipe.ingredients
   end
 
   def destroy
-    
+
   end
 
   private

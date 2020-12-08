@@ -4,9 +4,23 @@
 
   <div class="main-contents">
     <%= render "shared/side-bar" %>
+
     <div class="recipe-show">
-    
-    
+      <div class="recipe-title"><%= @recipe.title %></div>
+      <div class="recipe-show-content">
+        <% if @recipe.site_type_id == 2 %>
+          <%= link_to "レシピを見る", "https://youtu.be/#{@recipe.url}", class: "recipe-show-link" %>
+        <% end %>
+        <div class="recipe-show-ingredients">
+          <% @ingredients.each do |ingredient| %>
+            <%= ingredient.name %>
+          <% end %>
+        </div>
+
+        <% if @recipe.site_type_id == 2 %>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= @recipe.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% end %>
+      </div>
     </div>
     
   </div>
