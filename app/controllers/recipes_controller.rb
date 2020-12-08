@@ -18,14 +18,17 @@ class RecipesController < ApplicationController
   end
   
   def create
+    # 素材を配列に格納
+    ingredients_split
+
     @form_recipe_ingredient = FormRecipeIngredient.new(recipe_params)
     unless @form_recipe_ingredient.valid?
       render :new
     else
+      # youtubeの場合はURLを加工
       if @form_recipe_ingredient.site_type_id == 2
         @form_recipe_ingredient.url = @form_recipe_ingredient.url.last(11)
       end
-      binding.pry
       @form_recipe_ingredient.save
       redirect_to root_path and return
     end
@@ -43,6 +46,10 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:form_recipe_ingredient).permit(:title, :url, :site_type_id, :effort_level_id, :content, name: []).merge(user_id: current_user.id)
+  end
+
+  def ingredients_split
+    params[:form_recipe_ingredient][:name] = params[:form_recipe_ingredient][:name].split("、")
   end
 
 end

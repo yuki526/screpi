@@ -15,6 +15,9 @@
         <div class="recipe-url">URL</div>
         <%= f.text_field :url, class: "new-recipe-form-field"%>
 
+        <div class="recipe-url">素材入力 ※全角読点「、」で区切ってください。</div>
+        <%= f.text_field :name, class: "new-recipe-form-field"%>
+
         <div class="site_type">youtubeかそれ以外かを選んでください。</div>
         <%= f.collection_select(:site_type_id, SiteType.all, :id, :name, {}, {class:"new-recipe-form-field"}) %>
 
