@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_011342) do
+ActiveRecord::Schema.define(version: 2020_12_07_100122) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,12 @@ ActiveRecord::Schema.define(version: 2020_12_05_011342) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
+  create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "recipe_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id", null: false
@@ -73,9 +79,18 @@ ActiveRecord::Schema.define(version: 2020_12_05_011342) do
     t.index ["user_id"], name: "index_recipe_comments_on_user_id"
   end
 
+  create_table "recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "recipe_id"
+    t.bigint "ingredient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
+    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
+  end
+
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.string "URL", null: false
+    t.string "url", null: false
     t.integer "site_type_id", null: false
     t.integer "effort_level_id", null: false
     t.bigint "user_id", null: false
@@ -105,5 +120,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_011342) do
   add_foreign_key "blogs", "users"
   add_foreign_key "recipe_comments", "recipes"
   add_foreign_key "recipe_comments", "users"
+  add_foreign_key "recipe_ingredients", "ingredients"
+  add_foreign_key "recipe_ingredients", "recipes"
   add_foreign_key "recipes", "users"
 end

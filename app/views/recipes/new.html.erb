@@ -8,12 +8,15 @@
     <div class="recipe">
       <div class="new-title">レシピ追加</div>
       <div class="new-recipe-form">
-      <%= form_with model: @recipe, local: true do |f| %>
+      <%= form_with model: @form_recipe_ingredient, url: recipes_path, local: true do |f| %>
         <div class="new-recipe-title">title</div>
         <%= f.text_field :title, class: "new-recipe-form-field"%>
 
         <div class="recipe-url">URL</div>
-        <%= f.text_field :URL, class: "new-recipe-form-field"%>
+        <%= f.text_field :url, class: "new-recipe-form-field"%>
+
+        <div class="recipe-url">素材入力 ※全角読点「、」で区切ってください。</div>
+        <%= f.text_field :name, class: "new-recipe-form-field"%>
 
         <div class="site_type">youtubeかそれ以外かを選んでください。</div>
         <%= f.collection_select(:site_type_id, SiteType.all, :id, :name, {}, {class:"new-recipe-form-field"}) %>

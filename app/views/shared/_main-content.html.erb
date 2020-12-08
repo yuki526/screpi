@@ -7,7 +7,7 @@
     <div class="new-recipe-images">
       <% @new_videos.each do |video|%>
         <div class="new-recipe-image">
-            <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= video.URL %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= video.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <%= link_to video.title, recipe_path(video.id), class:"recipe-title" %>
             <a class="star">★★★★★</a>
             
@@ -22,7 +22,7 @@
     <% @new_recipes.each do |recipe| %>
       <div class="new-recipe">
         <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
-        <%= link_to recipe.site_type.name, recipe.URL, class:"recipe-link recipe-site-link" %>
+        <%= link_to recipe.site_type.name, recipe.url, class:"recipe-link recipe-site-link" %>
         </div>
     <% end %>
     <%= paginate @new_recipes %>
