@@ -1,0 +1,53 @@
+$mainColor: rgb(197, 136, 56);
+$subColor: rgb(151, 104, 41);
+
+
+// recipes/new
+
+.recipe {
+  .new-title {
+    font-size: 30px;
+    margin: 5px 0 20px 0;
+    color: $subColor;
+  }
+
+  .label {
+    margin: 10px 0 ;
+  }
+
+  .new-recipe-form {
+    font-size: 23px;
+  }
+
+  .new-recipe-form-field {
+    height: 26px;
+    width: 270px;
+    border: 1px solid $mainColor;
+    margin-bottom: 15px;
+    
+    &.ingredients-field {
+      width: 400px;
+    }
+  }
+
+  .memo {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .recipe-add-button {
+      font-size: 20px;
+      height: 40px;
+      width: 130px;
+      color: white;
+      background-color: $subColor;
+      border: none;
+      border-radius: 1ch;
+      display: block;
+      margin: 20px auto 0;
+      
+      &:hover {
+        cursor: pointer;
+      }
+  }
+}
