@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   end
   
   def mypage
+    @my_recipes = Recipe.where(user_id: current_user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new

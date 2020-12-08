@@ -3,9 +3,27 @@
   <%= render "shared/menu-bar" %>
   <div class="main-contents">
     <%= render "shared/side-bar" %>
-    <div class="mypage">
-    mypage
-    中身を記載予定
+
+    <div class="my_page">
+    
+      <div class="my_recipes">
+        <div class="my_recipes_head">マイレシピ</div>
+        <% @my_recipes.each do |recipe| %>
+          <div class="my_recipe">
+            <div class="my_recipe_title">
+              <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
+            </div>
+            <div class="my_recipe_date">
+              <%= l recipe.created_at %>
+            </div>
+            <div class="my_recipe_url">
+              <%= link_to recipe.site_type.name, recipe.url, class:"recipe-link recipe-site-link" %>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @my_recipes %>
+      </div>
+
     </div>
   </div>
 
