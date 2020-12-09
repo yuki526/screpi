@@ -7,20 +7,25 @@
 
     <div class="recipe-show">
       <div class="recipe-title"><%= @recipe.title %></div>
-      <div class="recipe-show-content">
-        <% if @recipe.site_type_id == 2 %>
+      <%# youtubeの場合 %>
+      <% if @recipe.site_type_id == 2 %>
+        <div class="recipe-show-content">
+          <div class="recipe-show-youtube">
+            <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= @recipe.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           <%= link_to "レシピを見る", "https://youtu.be/#{@recipe.url}", class: "recipe-show-link" %>
-        <% end %>
-        <div class="recipe-show-ingredients">
-          <% @ingredients.each do |ingredient| %>
-            <%= ingredient.name %>
-          <% end %>
-        </div>
+          <div class="recipe-show-ingredients">
+            素材：
+            <% @ingredients.each do |ingredient| %>
+              <%= ingredient.name %>
+            <% end %>
+          </div>
+          <div class="recipe-show-effort">
+            手間度：<%= render "shared/effort-level-show", model: @recipe %>
+          </div>
 
-        <% if @recipe.site_type_id == 2 %>
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= @recipe.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
     
   </div>
