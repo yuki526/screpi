@@ -29,7 +29,11 @@
               <%= l recipe.created_at %>
             </div>
             <div class="my-recipe-url">
-              <%= link_to recipe.site_type.name, recipe.url, class:"recipe-link recipe-site-link" %>
+              <% if recipe.site_type_id == 2 %>
+                <%= link_to "youtube", "https://youtu.be/#{recipe.url}", class: "recipe-link recipe-site-link" %>
+              <% else %>
+                <%= link_to recipe.site_type.name, recipe.url, class:"recipe-link recipe-site-link" %>
+              <% end %>
             </div>
           </div>
         <% end %>
