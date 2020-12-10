@@ -11,9 +11,32 @@
       <% if @recipe.site_type_id == 2 %>
         <div class="recipe-show-content">
           <div class="recipe-show-youtube">
-            <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= @recipe.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="300" height="220" src="https://www.youtube.com/embed/<%= @recipe.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <%= link_to "レシピを見る", "https://youtu.be/#{@recipe.url}", class: "recipe-show-link" %>
+          <div class="recipe-show-youtube-others">
+            <div class="recipe-show-link">
+              <%= link_to "https://youtu.be/#{@recipe.url}",target: :_blank, rel: "noopener noreferrer", class:"recipe-show-link" do %>
+                レシピを見る<i class="fa fa-external-link" aria-hidden="true"></i>
+              <% end %>
+            </div>
+            <div class="recipe-show-ingredients">
+              素材：
+              <% @ingredients.each do |ingredient| %>
+                <%= ingredient.name %>
+              <% end %>
+            </div>
+            <div class="recipe-show-effort">
+              手間度：<%= render "shared/effort-level-show", model: @recipe %>
+            </div>
+          </div>
+        </div>
+
+      <% else %>
+      <%# それ以外の場合 %>
+        <div class="recipe-show-content">
+          <%= link_to @recipe.url, target: :_blank, rel: "noopener noreferrer", class: "recipe-show-link" do %>
+            レシピを見る<i class="fa fa-external-link" aria-hidden="true"></i>
+          <% end %>
           <div class="recipe-show-ingredients">
             素材：
             <% @ingredients.each do |ingredient| %>
@@ -23,7 +46,6 @@
           <div class="recipe-show-effort">
             手間度：<%= render "shared/effort-level-show", model: @recipe %>
           </div>
-
         </div>
       <% end %>
     </div>

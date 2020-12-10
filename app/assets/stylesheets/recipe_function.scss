@@ -51,3 +51,31 @@ $subColor: rgb(151, 104, 41);
       }
   }
 }
+
+// recipes/show
+
+.recipe-show-content {
+  display: flex;
+}
+
+.recipe-show-youtube {
+  margin: 20px 30px 20px 0;
+}
+.recipe-show-youtube-others {
+  display: flex;
+  flex-direction: column;
+  font-size: 23px;
+}
+
+.recipe-show-link {
+  margin: 20px 0 10px;
+  color: $mainColor;
+}
+
+.recipe-show-ingredients {
+  margin: 10px 0 10px;
+}
+
+.recipe-show-effort {
+  margin: 10px 0 10px;
+}
