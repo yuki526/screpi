@@ -228,32 +228,24 @@ $subColor: rgb(151, 104, 41);
     }
   }
 
-  .page-nation {
-    margin-bottom: 70px;
-  }
-
-  .pagination {
-    color: $mainColor;
-    text-align: right;
-  }
-
+  
   .new-blogs {
     margin-bottom: 70px;
-
+    
     .new-blog-head {
       font-size: 30px;
       margin: 5px 0 20px 0;
       color: $subColor;
-
+      
     }
-
+    
     .new-blog-articles {
       font-size: 23px;
       margin-left: 20px;
       
       .new-blog-article {
         margin-bottom: 30px;
-
+        
         .article-data{
           display: flex;
           justify-content: space-between;
@@ -270,20 +262,20 @@ $subColor: rgb(151, 104, 41);
   
   .recipe-rank {
     margin-bottom: 70px;
-
+    
     .recipe-rank-head {
       font-size: 30px;
       margin: 5px 0 20px 0;
       color: $subColor;
     }
-
+    
     .rank-recipe-images {
       display: flex;
-
+      
       .rank-recipe-image {
         margin-right: 10px;
       }
-
+      
     }
   }
 }
@@ -297,24 +289,39 @@ $subColor: rgb(151, 104, 41);
   background-color: $subColor;
   width: 100%;
   height: 100px;
-
+  
   .bottom-logo {
     height: 50px;
     display: block;
     padding-top: 30px;
     margin: 0 auto;
   }
-
+  
   .bottom-text {
     text-align: center;
     margin: 0 auto;
   }
-
+  
 }
+
+
+// 共通部
 
 .recipe-title {
   text-decoration: none;
   font-size: 25px;
   color: $subColor;
   display: block
+}
+
+
+// kaminari
+
+.page-nation {
+  margin-bottom: 70px;
+}
+
+.pagination {
+  color: $mainColor;
+  text-align: right;
 }

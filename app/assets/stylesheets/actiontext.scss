@@ -8,7 +8,12 @@
 // We need to override trix.css’s image gallery styles to accommodate the
 // <action-text-attachment> element we wrap around attachments. Otherwise,
 // images in galleries will be squished by the max-width: 33%; rule.
+
+$mainColor: rgb(197, 136, 56);
+$subColor: rgb(151, 104, 41);
+
 .trix-content {
+  
   .attachment-gallery {
     > action-text-attachment,
     > .attachment {
@@ -16,7 +21,7 @@
       padding: 0 0.5em;
       max-width: 33%;
     }
-
+    
     &.attachment-gallery--2,
     &.attachment-gallery--4 {
       > action-text-attachment,
@@ -26,7 +31,7 @@
       }
     }
   }
-
+  
   action-text-attachment {
     .attachment {
       padding: 0 !important;
@@ -36,5 +41,9 @@
 }
 
 .new-recipe-rich-text-form {
+  font-size: 16px;
   padding: 10px 20px 10px 30px;
+  color: $subColor;
+  border: 1px solid $mainColor;
+  height: 300px;
 }

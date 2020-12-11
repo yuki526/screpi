@@ -1,9 +1,9 @@
 class Recipe < ApplicationRecord
   belongs_to :user
   has_many :blogs, dependent: :destroy
-  has_many :recipe_comments
-  has_many :recipe_ingredinents
-  has_many :ingredients, through: :recipe_ingredinents
+  has_many :recipe_comments, dependent: :destroy
+  has_many :recipe_ingredients, dependent: :destroy
+  has_many :ingredients, through: :recipe_ingredients
 
   has_rich_text :content
 

@@ -6,35 +6,45 @@
 
 
     <div class="recipe">
-      <div class="new-title">レシピ追加</div>
-      <div class="new-recipe-form">
-      <%= form_with model: @form_recipe_ingredient, url: recipes_path, local: true do |f| %>
-        <div class="new-recipe-title">title</div>
-        <%= f.text_field :title, class: "new-recipe-form-field"%>
+      <div class="new-title">あたらしいマイレシピを追加</div>
+        <div class="new-recipe-form">
+          <%= form_with model: @form_recipe_ingredient, url: recipes_path, local: true do |f| %>
+            <div class="label">レシピ名</div>
+            <%= f.text_field :title, class: "new-recipe-form-field"%>
 
-        <div class="recipe-url">URL</div>
-        <%= f.text_field :url, class: "new-recipe-form-field"%>
+            <div class="label">
+              サイトURL
+              <div class="memo">※youtubeの場合は「共有」内のURLを記載してください</div>
+            </div>
+            <%= f.text_field :url, class: "new-recipe-form-field"%>
 
-        <div class="recipe-url">素材入力 ※全角読点「、」で区切ってください。</div>
-        <%= f.text_field :name, class: "new-recipe-form-field"%>
+            <div class="label">
+              素材入力 
+              <div class="memo">※全角読点「、」で区切ってください。</div>
+            </div>
+            <%= f.text_field :name, class: "new-recipe-form-field ingredients-field"%>
 
-        <div class="site_type">youtubeかそれ以外かを選んでください。</div>
-        <%= f.collection_select(:site_type_id, SiteType.all, :id, :name, {}, {class:"new-recipe-form-field"}) %>
+            <div class="label">引用元サイトを選んでください。</div>
+            <%= f.collection_select(:site_type_id, SiteType.all, :id, :name, {}, {class:"new-recipe-form-field"}) %>
 
-        <div class="effort-level">どのくらいの手間がかかるか、☆いくつ？</div>
-        <%= f.collection_select(:effort_level_id, EffortLevel.all, :id, :name, {}, {class:"new-recipe-form-field"}) %>
-
-        <br>
-        材料表示は検討中
-        <br>
-
-        <div class="recipe-content">本文</div>
-        <%= f.rich_text_area :content, class: "new-recipe-rich-text-form"%>
+            <div class="label">
+              手間度を☆で表すとしたら？
+              <div class="memo">めっちゃかんたん：☆1 〜 ☆5：かなり手間かかる</div>
+            </div>
+            <%= f.collection_select(:effort_level_id, EffortLevel.all, :id, :name, {}, {class:"new-recipe-form-field"}) %>
 
 
-        <%= f.submit '追加', class: "list-add-button" %>
-      <% end %>
-    </div>
+            <div class="label">
+              材料、分量、作り方など自由メモ
+              <div class="memo">ドラッグ＆ドロップで画像保存OK！</div>
+            </div>
+
+            <%= f.rich_text_area :content, class: "new-recipe-rich-text-form"%>
+
+
+            <%= f.submit '追加する', class: "recipe-add-button" %>
+          <%end %>
+        </div>
 
     </div>
   
