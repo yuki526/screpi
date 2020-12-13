@@ -37,6 +37,8 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.includes(:user).find(params[:id])
     @ingredients = @recipe.ingredients
+    @comment = RecipeComment.new
+    @comments = RecipeComment.where(recipe_id: @recipe.id).order("created_at DESC")
   end
 
   def destroy
