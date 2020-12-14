@@ -54,16 +54,18 @@
       </div>
 
       <%# 投稿者の場合はレシピ本文と編集・削除リンクを表示 %>
-      <% if @recipe.user_id == current_user.id %>
-        <div class="recipe-show-content">
-          <%= @recipe.content %> 
-        </div>
-        <div class="recipe-show-admin">
-          <div class="edit"><%= link_to 'edit', edit_recipe_path(@recipe) %></div>
-          <div class="delete"><%= link_to 'delete', recipe_path(@recipe), method: :delete %></div>
-        </div>
-      <% end %>
+      <% if user_signed_in? %>
+        <% if @recipe.user_id == current_user.id %>
+          <div class="recipe-show-admin">
+            <div class="edit"><%= link_to 'edit', edit_recipe_path(@recipe), class: "edit" %></div>
+            <div class="delete"><%= link_to 'delete', recipe_path(@recipe), method: :delete, class: "delete" %></div>
+          </div>
+          <div class="recipe-show-main">
+            <%= @recipe.content %> 
+          </div>
+        <% end %>
 
+      <% end %>
       <div class="recipe-show-comments">
         <div class="comment-title">Comments</div>
         <div class="comment-add-form">

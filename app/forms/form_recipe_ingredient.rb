@@ -6,7 +6,7 @@ class FormRecipeIngredient
   def save
     #材料以外のレシピデータを保存
     recipe = Recipe.create(title: title, url: url, site_type_id: site_type_id,
-                          effort_level_id: effort_level_id, user_id: user_id)
+                          effort_level_id: effort_level_id, content: content,user_id: user_id)
 
     # 材料を一つずつ登録or既存データを取り出し、idを配列に格納
     ingredients_array = Array.new
