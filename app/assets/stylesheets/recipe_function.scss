@@ -120,9 +120,12 @@ $subColor: rgb(151, 104, 41);
 }
 
 .recipe-show-main {
+  color: $subColor;
   display: block;
   width: 100%;
-  background-color: antiquewhite;
+  background-color: rgb(248, 242, 234);
   margin: 10px 0 10px;
-  padding: 20px;
+  padding: 30px;
+  border: 1px solid rgb(248, 242, 234);
+  border-radius: 50px;
 }

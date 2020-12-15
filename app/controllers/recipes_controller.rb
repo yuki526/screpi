@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate, only: [:mypage, :new, :create, :destroy]
 
-  
   def index
     @new_videos = Recipe.where(site_type_id: 2).order("created_at DESC").limit(3)
     @new_recipes = Recipe.where.not(site_type_id: 2).order("created_at DESC").page(params[:page]).per(5)
@@ -42,8 +41,11 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to mypage_recipe_path(current_user.id)
   end
+
 
   private
   
