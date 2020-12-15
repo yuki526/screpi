@@ -68,19 +68,18 @@
       <% end %>
       <div class="recipe-show-comments">
         <div class="comment-title">Comments</div>
-        <div class="comment-add-form">
-          <%= form_with url: recipe_recipe_comments_path(@recipe), model: [@recipe, @comment], method: :post, local: true do |f| %>
-            <%= f.text_field :text, class: "comment-field"%>
-            <%= f.submit '投稿', class: "comment-add-button" %>
-          <% end %>
-        </div>
         <div class="comments">
           <% if @comments %>
             <% @comments.each do |comment| %>
               <div class="comment"><%= comment.text %></div>
             <% end %>
           <% end %>
-        
+        </div>
+        <div class="comment-add-form">
+          <%= form_with url: recipe_recipe_comments_path(@recipe), model: [@recipe, @comment], method: :post, local: true do |f| %>
+            <%= f.text_field :text, class: "comment-field"%>
+            <%= f.submit '投稿', class: "comment-add-button" %>
+          <% end %>
         </div>
       </div>
 
