@@ -9,8 +9,7 @@
         <div class="new-recipe-image">
             <iframe width="300" height="250" src="https://www.youtube.com/embed/<%= video.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <%= link_to video.title, recipe_path(video.id), class:"recipe-title" %>
-            <a class="star">手間度：<%= render "shared/effort-level-show", model: video %></a>
-            
+            <a class="star">手間度：<%= render "shared/effort-level-show", model: video %></a>           
         </div>
       <% end %>
     </div>
