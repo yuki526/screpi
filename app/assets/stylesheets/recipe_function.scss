@@ -1,5 +1,6 @@
 $mainColor: rgb(197, 136, 56);
 $subColor: rgb(151, 104, 41);
+$bgColor: rgb(248, 242, 234);
 
 
 // recipes/new
@@ -123,9 +124,84 @@ $subColor: rgb(151, 104, 41);
   color: $subColor;
   display: block;
   width: 100%;
-  background-color: rgb(248, 242, 234);
+  background-color: $bgColor;
   margin: 10px 0 10px;
   padding: 30px;
-  border: 1px solid rgb(248, 242, 234);
+  border: 1px solid $bgColor;
   border-radius: 50px;
+}
+
+
+
+.recipe-show-comments {
+  margin-top: 50px;
+
+  .comment-title {
+    font-size: 26px;
+    color: $subColor;
+    margin: 5px 0 15px 0;
+  }
+
+  .comments {
+    margin-bottom: 50px;
+
+    .comment {
+      position: relative;
+      display: block;
+      margin: 1em 0 0 20px;
+      padding: 20px 20px 10px 20px;
+      min-width: 120px;
+      max-width: 60%;
+      color: #555;
+      font-size: 16px;
+      background: $bgColor;
+      border-radius: 10px;
+    }
+    
+    .comment:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      margin-top: -15px;
+      border: 15px solid transparent;
+      border-right: 15px solid $bgColor;
+      
+    }
+
+    .comment-date {
+      font-size: 9px;
+      text-align: right;
+    }
+    
+    
+  }
+
+  .comment-add-form {
+    background-color: $bgColor;
+    padding: 20px 20px 20px 40px;
+    border-radius: 30px;
+
+    .comment-field {
+      height: 30px;
+      width: 80%;
+      border: 1px solid $mainColor;
+    }
+
+    
+
+    .comment-add-button {
+      font-size: 16px;
+      height: 30px;
+      width: 60px;
+      color: white;
+      background-color: $subColor;
+      border: none;
+      border-radius: 1ch;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }

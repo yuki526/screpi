@@ -92,6 +92,7 @@ $subColor: rgb(151, 104, 41);
 
 .side-bar {
   width: 18%;
+  max-height: 70vh;
   background-color: white;
   border: 1px solid $mainColor;
   padding: 30px 0px;
@@ -202,8 +203,9 @@ $subColor: rgb(151, 104, 41);
       
     
       .new-recipe-image {
-        margin-right: 10px;
+        margin-right: 23px;
       }
+
     }
 
     .new-recipe {
@@ -324,4 +326,8 @@ $subColor: rgb(151, 104, 41);
 .pagination {
   color: $mainColor;
   text-align: right;
+}
+
+iframe {
+  border-radius: 10px;
 }
