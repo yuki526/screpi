@@ -30,9 +30,9 @@
             </div>
             <div class="my-recipe-url">
               <% if recipe.site_type_id == 2 %>
-                <%= link_to "youtube", "https://youtu.be/#{recipe.url}", class: "recipe-link recipe-site-link" %>
+                <%= link_to "youtube", "https://youtu.be/#{recipe.url}", target: :_blank, rel: "noopener noreferrer", class: "recipe-link recipe-site-link" %>
               <% else %>
-                <%= link_to recipe.site_type.name, recipe.url, class:"recipe-link recipe-site-link" %>
+                <%= link_to recipe.site_type.name, recipe.url, target: :_blank, rel: "noopener noreferrer", class:"recipe-link recipe-site-link" %>
               <% end %>
             </div>
           </div>

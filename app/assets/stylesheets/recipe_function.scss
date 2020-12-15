@@ -53,6 +53,16 @@ $subColor: rgb(151, 104, 41);
 }
 
 // recipes/show
+.recipe-show-block {
+  width: 82%;
+
+  .recipe-title {
+    font-size: 30px;
+    display: block;
+    width: 100%;
+    margin: 10px 0 10px;
+  }
+}
 
 .recipe-show-content {
   display: flex;
@@ -90,4 +100,29 @@ $subColor: rgb(151, 104, 41);
 .username {
   font-size: 16px;
   text-align: right;
+}
+
+.recipe-show-admin {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0 10px;
+  font-size: 18px;
+  
+  .edit {
+    margin: 1px;
+    color: $mainColor;
+  }
+
+  .delete {
+    color: $mainColor;
+    margin: 1px;
+  }
+}
+
+.recipe-show-main {
+  display: block;
+  width: 100%;
+  background-color: antiquewhite;
+  margin: 10px 0 10px;
+  padding: 20px;
 }
