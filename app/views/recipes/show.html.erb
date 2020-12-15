@@ -72,7 +72,9 @@
         <div class="comments">
           <% if @comments %>
             <% @comments.each do |comment| %>
-              <div class="comment"><%= comment.text %></div><br>
+              <div class="comment"><%= comment.text %>
+                <div class="comment-date"><%= l comment.created_at %></div>
+              </div><br>
             <% end %>
           <% end %>
         </div>
