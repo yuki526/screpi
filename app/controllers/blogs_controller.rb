@@ -14,7 +14,12 @@ class BlogsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def destroy
+    blog = Blog.find(params[:id])
+    blog.destroy
+    redirect_to mypage_recipe_path(current_user.id)
   end
 
 
