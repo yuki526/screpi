@@ -10,7 +10,7 @@ class SiteType < ActiveHash::Base
     { id: 8, name: 'みんなのきょうの料理'},
     { id: 9, name: 'レタスクラブ'},
     { id: 10, name: 'つくおき'},
-    { id: 11, name: 'それ以外'}
+    { id: 11, name: 'その他'}
   ]
 
   include ActiveHash::Associations
