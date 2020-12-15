@@ -64,24 +64,39 @@
             <%= @recipe.content %> 
           </div>
         <% end %>
-
       <% end %>
+
+      <%# コメント欄 %>
       <div class="recipe-show-comments">
         <div class="comment-title">Comments</div>
         <div class="comments">
           <% if @comments %>
             <% @comments.each do |comment| %>
-              <div class="comment"><%= comment.text %></div>
+              <div class="comment"><%= comment.text %></div><br>
             <% end %>
           <% end %>
         </div>
-        <div class="comment-add-form">
-          <%= form_with url: recipe_recipe_comments_path(@recipe), model: [@recipe, @comment], method: :post, local: true do |f| %>
-            <%= f.text_field :text, class: "comment-field"%>
-            <%= f.submit '投稿', class: "comment-add-button" %>
-          <% end %>
-        </div>
+        <% if user_signed_in? %>
+          <div class="comment-add-form">
+            <%= form_with url: recipe_recipe_comments_path(@recipe), model: [@recipe, @comment], method: :post, local: true do |f| %>
+              <%= f.text_field :text, class: "comment-field"%>
+              <%= f.submit '投稿', class: "comment-add-button" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
+
+      <%# ブログ表示 %>
+      <% unless @blogs.empty? %>
+        <div class="recipe-show-blogs">
+          <div class="blog-title">Blog</div>
+          <div class="blogs">
+              <% @blogs.each do |blog| %>
+                <div class="blog"><%= blog.title %></div>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
 
     </div>
 

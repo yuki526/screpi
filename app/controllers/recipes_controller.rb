@@ -38,6 +38,7 @@ class RecipesController < ApplicationController
     @ingredients = @recipe.ingredients
     @comment = RecipeComment.new
     @comments = RecipeComment.where(recipe_id: @recipe.id).order("created_at DESC")
+    @blogs = Blog.where(recipe_id: @recipe.id).order("created_at DESC")
   end
 
   def destroy
