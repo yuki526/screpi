@@ -42,7 +42,9 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to mypage_recipe_path(current_user.id)
   end
 
   private
