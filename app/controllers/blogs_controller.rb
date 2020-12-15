@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :authenticate, only: [:new, :create]
+  before_action :authenticate, only: [:new, :create, :destroy]
 
 
   def new
