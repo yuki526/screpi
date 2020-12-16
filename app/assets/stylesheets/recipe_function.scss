@@ -132,6 +132,25 @@ $bgColor: rgb(248, 242, 234);
   border-radius: 50px;
 }
 
+.communications {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 60px;
+  font-size: 18px;
+  
+  .communication {
+    padding: 20px;
+    border: 1px solid $subColor;
+    border-radius: 60px;
+    background-color: $subColor;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 
 
 .recipe-show-comments {
