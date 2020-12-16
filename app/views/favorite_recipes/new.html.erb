@@ -8,7 +8,7 @@
     <div class="recipe">
       <div class="new-title">マイレシピに追加</div>
         <div class="new-recipe-form">
-          <%= form_with model: @form_recipe_ingredient, url: new_favorite_recipe_path, local: true do |f| %>
+          <%= form_with model: @favorite_recipe, url: favorite_recipes_path, local: true do |f| %>
             <div class="label add-favorite">レシピ名：<%= @recipe.title %></div>
 
             <div class="label add-favorite">
