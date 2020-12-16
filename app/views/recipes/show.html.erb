@@ -29,7 +29,6 @@
               <div class="recipe-show-effort">
                 手間度：<%= render "shared/effort-level-show", model: @recipe %>
               </div>
-              <div class="username">Posted by <%= @recipe.user.name %></div>
             </div>
           </div>
 
@@ -48,9 +47,9 @@
             <div class="recipe-show-effort">
               手間度：<%= render "shared/effort-level-show", model: @recipe %>
             </div>
-            <div class="username">Posted by <%= @recipe.user.name %></div>
           </div>
         <% end %>
+        <div class="username">Posted by <%= @recipe.user.name %></div>
       </div>
 
       <%# 投稿者の場合はレシピ本文と編集・削除リンクを表示 %>

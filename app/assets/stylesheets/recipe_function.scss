@@ -24,6 +24,7 @@ $bgColor: rgb(248, 242, 234);
     height: 26px;
     width: 270px;
     border: 1px solid $mainColor;
+    border-radius: 5px;
     margin-bottom: 15px;
     
     &.ingredients-field {
