@@ -10,3 +10,4 @@ class FavoriteRecipe < ApplicationRecord
   belongs_to :site_type
   belongs_to :effort_level
 end
+

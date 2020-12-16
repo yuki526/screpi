@@ -1,0 +1,46 @@
+<div class="content">
+  <%= render "shared/top-content" %>
+  <%= render "shared/menu-bar" %>
+  <div class="main-contents">
+    <%= render "shared/side-bar" %>
+
+
+    <div class="recipe">
+      <div class="new-title">マイレシピに追加</div>
+        <div class="new-recipe-form">
+          <%= form_with model: @form_recipe_ingredient, url: new_favorite_recipe_path, local: true do |f| %>
+            <div class="label add-favorite">レシピ名：<%= @recipe.title %></div>
+
+            <div class="label add-favorite">
+              素材　　：
+              <% @ingredients.each do |ingredient| %>
+                <%= ingredient.name %>
+              <% end %>
+            </div>
+
+            <div class="label add-favorite">
+              手間度　：
+              <%= f.collection_select(:effort_level_id, EffortLevel.all, :id, :name, {}, {class:"new-recipe-form-field"}) %>
+            </div>
+
+
+            <div class="label">
+              材料、分量、作り方など自由メモ
+              <div class="memo">ドラッグ＆ドロップで画像保存OK！</div>
+            </div>
+
+            <%= f.rich_text_area :content, class: "new-recipe-rich-text-form"%>
+
+            <%= f.hidden_field :recipe_id, :value => @recipe.id %>
+            <%= f.submit '追加する', class: "recipe-add-button" %>
+          <%end %>
+        </div>
+
+    </div>
+  
+  
+  </div>
+  <div class="bottom-content">
+    <%= render "shared/bottom-content"%>
+  </div>
+</div>
