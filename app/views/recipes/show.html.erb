@@ -29,7 +29,6 @@
               <div class="recipe-show-effort">
                 手間度：<%= render "shared/effort-level-show", model: @recipe %>
               </div>
-              <div class="username">Posted by <%= @recipe.user.name %></div>
             </div>
           </div>
 
@@ -48,9 +47,9 @@
             <div class="recipe-show-effort">
               手間度：<%= render "shared/effort-level-show", model: @recipe %>
             </div>
-            <div class="username">Posted by <%= @recipe.user.name %></div>
           </div>
         <% end %>
+        <div class="username">Posted by <%= @recipe.user.name %></div>
       </div>
 
       <%# 投稿者の場合はレシピ本文と編集・削除リンクを表示 %>
@@ -97,6 +96,17 @@
                 <div class="blog"><%= blog.title %></div>
               <% end %>
           </div>
+        </div>
+      <% end %>
+
+      <%# コミュニティ欄 %>
+      <% if user_signed_in? %>
+        <div class="communications">
+          <div class="communication">おいしそう！</div>
+          <div class="communication">
+            <%= link_to 'マイレシピ登録', new_favorite_recipe_path(recipe_id: @recipe.id) %>
+          </div>
+          <div class="communication">ブログを書く</div>
         </div>
       <% end %>
 

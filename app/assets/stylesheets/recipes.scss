@@ -48,6 +48,7 @@ $subColor: rgb(151, 104, 41);
     height: 32px;
     width: 170px;
     border: 1px solid $mainColor;
+    border-radius: 5px;
   }
   
   .search-button {
@@ -73,6 +74,7 @@ $subColor: rgb(151, 104, 41);
   justify-content: space-around;
   align-items: center;
   margin-bottom: 20px;
+  border-radius: 10px;
 
 }
 
@@ -95,6 +97,7 @@ $subColor: rgb(151, 104, 41);
   max-height: 70vh;
   background-color: white;
   border: 1px solid $mainColor;
+  border-radius: 10px;
   padding: 30px 0px;
   margin: 0 20px 100px 0;
   
@@ -120,6 +123,7 @@ $subColor: rgb(151, 104, 41);
     height: 30px;
     width: 150px;
     border: 1px solid $mainColor;
+    border-radius: 5px;
     margin: 0 auto 5px;
     display: block;
   }

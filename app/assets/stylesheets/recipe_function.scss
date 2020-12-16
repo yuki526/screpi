@@ -14,6 +14,10 @@ $bgColor: rgb(248, 242, 234);
 
   .label {
     margin: 10px 0 ;
+
+    &.add-favorite {
+      margin: 20px 0 20px 0;
+    }
   }
 
   .new-recipe-form {
@@ -24,6 +28,7 @@ $bgColor: rgb(248, 242, 234);
     height: 26px;
     width: 270px;
     border: 1px solid $mainColor;
+    border-radius: 5px;
     margin-bottom: 15px;
     
     &.ingredients-field {
@@ -129,6 +134,25 @@ $bgColor: rgb(248, 242, 234);
   padding: 30px;
   border: 1px solid $bgColor;
   border-radius: 50px;
+}
+
+.communications {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 60px;
+  font-size: 18px;
+  
+  .communication {
+    padding: 20px;
+    border: 1px solid $subColor;
+    border-radius: 60px;
+    background-color: $subColor;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 

@@ -10,4 +10,5 @@ class EffortLevel < ActiveHash::Base
 
   include ActiveHash::Associations
     has_many :recipes
+    has_many :favorite_recipes
 end
