@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
   has_many :recipe_comments, dependent: :destroy
   has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
+  has_many :favorite_recipes
 
   has_rich_text :content
 
