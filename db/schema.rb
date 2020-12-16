@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_081348) do
+ActiveRecord::Schema.define(version: 2020_12_16_123937) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2020_12_16_081348) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_blogs_on_recipe_id"
     t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
+
+  create_table "favorite_recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "favorite_recipe_id"
+    t.bigint "ingredient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["favorite_recipe_id"], name: "index_favorite_recipe_ingredients_on_favorite_recipe_id"
+    t.index ["ingredient_id"], name: "index_favorite_recipe_ingredients_on_ingredient_id"
   end
 
   create_table "favorite_recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -131,6 +140,8 @@ ActiveRecord::Schema.define(version: 2020_12_16_081348) do
   add_foreign_key "blog_comments", "users"
   add_foreign_key "blogs", "recipes"
   add_foreign_key "blogs", "users"
+  add_foreign_key "favorite_recipe_ingredients", "favorite_recipes"
+  add_foreign_key "favorite_recipe_ingredients", "ingredients"
   add_foreign_key "favorite_recipes", "recipes"
   add_foreign_key "favorite_recipes", "users"
   add_foreign_key "recipe_comments", "recipes"
