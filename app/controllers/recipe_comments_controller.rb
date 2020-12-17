@@ -24,12 +24,4 @@ before_action :authenticate
   end
 end
 
-# def create
-#   @comment = Comment.new(comment_params)
-#   @prototype = @comment.prototype
-#   if @comment.save
-#     redirect_to prototype_path(@prototype)
-#   else  
-#     @comments = @prototype.comments.includes(:user)
-#     render "prototypes/show"
-#   end
+

@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate, only: [:mypage, :new, :create, :destroy]
+  before_action :set_list
 
   def index
     @new_videos = Recipe.where(site_type_id: 2).order("created_at DESC").limit(3)
@@ -52,6 +53,11 @@ class RecipesController < ApplicationController
   
   def authenticate
     redirect_to root_path unless user_signed_in?
+  end
+
+  def set_list
+    @list = List.new
+    @lists = List.where(user_id: current_user.id).includes(:ingredient)
   end
 
   def recipe_params
