@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'recipes#index'
 
@@ -20,5 +21,7 @@ Rails.application.routes.draw do
   end 
 
   resources :favorite_recipes, only: [:new, :create]
+
+  resources :lists, only: [:create, :destroy]
 
 end
