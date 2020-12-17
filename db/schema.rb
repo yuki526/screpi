@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_145025) do
+ActiveRecord::Schema.define(version: 2020_12_17_063415) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 2020_12_16_145025) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "ingredient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ingredient_id"], name: "index_lists_on_ingredient_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
   create_table "recipe_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id", null: false
@@ -144,6 +153,8 @@ ActiveRecord::Schema.define(version: 2020_12_16_145025) do
   add_foreign_key "favorite_recipe_ingredients", "ingredients"
   add_foreign_key "favorite_recipes", "recipes"
   add_foreign_key "favorite_recipes", "users"
+  add_foreign_key "lists", "ingredients"
+  add_foreign_key "lists", "users"
   add_foreign_key "recipe_comments", "recipes"
   add_foreign_key "recipe_comments", "users"
   add_foreign_key "recipe_ingredients", "ingredients"
