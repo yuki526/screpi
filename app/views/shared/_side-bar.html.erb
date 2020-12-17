@@ -18,8 +18,8 @@
     </ul>
 
     <div class="list-add-form">
-      <%= form_with model: @list, url:lists_path, method: :post, local: true do |f| %>
-        <%= f.text_field :keyword, class: "list-field"%>
+      <%= form_with model: @ingredient, url:lists_path, method: :post, local: true do |f| %>
+        <%= f.text_field :name, class: "list-field"%>
         <%= f.submit '追加', class: "list-add-button" %>
       <% end %>
     </div>

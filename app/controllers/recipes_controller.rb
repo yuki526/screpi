@@ -56,7 +56,7 @@ class RecipesController < ApplicationController
   end
 
   def set_list
-    @list = List.new
+    @ingredient = Ingredient.new
     @lists = List.where(user_id: current_user.id).includes(:ingredient)
   end
 
