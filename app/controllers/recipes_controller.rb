@@ -55,11 +55,6 @@ class RecipesController < ApplicationController
     redirect_to root_path unless user_signed_in?
   end
 
-  def set_list
-    @ingredient = Ingredient.new
-    @lists = List.where(user_id: current_user.id).includes(:ingredient)
-  end
-
   def recipe_params
     params.require(:form_recipe_ingredient).permit(:title, :url, :site_type_id, :effort_level_id, :content, name: []).merge(user_id: current_user.id)
   end
