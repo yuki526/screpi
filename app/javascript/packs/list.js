@@ -28,8 +28,6 @@ function list () {
       // レスポンスとして返却された品目名を取得
       const response = XHR.response;
       const name = response['name'];
-      
-      debugger
 
       // 表示する要素の親要素を取得
       const list = document.getElementById("list");
