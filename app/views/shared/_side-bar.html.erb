@@ -10,7 +10,7 @@
             <li class="list-item">
               <input type="checkbox" class="checkbox"><%= list.ingredient.name %>
               <span class="box-icon">
-                <%= link_to list_path(list.id), method: :delete, class:"recipe-show-link" do %>
+                <%= link_to list_path(list.id), method: :delete, class:"recipe-show-link", id:"box" do %>
                   <i class="fas fa-trash-alt"></i>
                 <% end %>
               </span>

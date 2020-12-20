@@ -4,14 +4,13 @@ class ListsController < ApplicationController
   def create
     ingredient= Ingredient.where(list_params).first_or_create
     list = List.create(user_id: current_user.id, ingredient_id: ingredient.id)
-    render json:{ name: list.ingredient.name } 
+    render json:{ name: list.ingredient.name, id: list.id } 
   end
 
   def destroy 
     list = List.find(params[:id])
     list.destroy
     redirect_to root_path
-    # render json {list: list}
   end
 
 
