@@ -7,6 +7,13 @@ class ListsController < ApplicationController
     render json:{ name: list.ingredient.name } 
   end
 
+  def destroy 
+    list = List.find(params[:id])
+    list.destroy
+    redirect_to root_path
+    # render json {list: list}
+  end
+
 
 
   private

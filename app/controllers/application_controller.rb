@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_list
+    if user_signed_in?
     @ingredient = Ingredient.new
     @lists = List.where(user_id: current_user.id).includes(:ingredient)
+    end
   end
   
 end
