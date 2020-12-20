@@ -4,23 +4,18 @@
   <% if user_signed_in? %>
 
     <div class="list-title">お買い物リスト</div>
-    <ul class="list">
-      <li class="list-item">にんじん
-      </li>
-      <li class="list-item">じゃがいも
-      </li>
-      <li class="list-item">白だし
-      </li>
-      <li class="list-item">バナナ
-      </li>
-      <li class="list-item">ほうれん草
-      </li>
-    </ul>
+      <ul class="list" id="list">
+        <% @lists.each do |list|%>
+          <label>
+            <li class="list-item"><input type="checkbox" class="checkbox"><%= list.ingredient.name %><span class="box-icon"><i class="fas fa-trash-alt"></span></i></li>
+          </label>
+        <% end %>
+      </ul>
 
     <div class="list-add-form">
-      <%= form_with url:'/', method: :get, local: true do |f| %>
-        <%= f.text_field :keyword, class: "list-field"%>
-        <%= f.submit '追加', class: "list-add-button" %>
+      <%= form_with model: @ingredient, url: lists_path, id:"form", method: :post  do |f| %>
+        <%= f.text_field :name, class: "list-field", id: "content" %>
+        <%= f.submit '追加', class: "list-add-button", id: "list-submit" %>
       <% end %>
     </div>
   

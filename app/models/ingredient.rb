@@ -4,4 +4,7 @@ class Ingredient < ApplicationRecord
 
   has_many :favorite_recipes, through: :favorite_recipe_ingredinents
   has_many :favorite_recipe_ingredinents
+
+  has_many :lists
+  has_many :users, through: :lists
 end
