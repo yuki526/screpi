@@ -6,7 +6,9 @@
     <div class="list-title">お買い物リスト</div>
       <ul class="list" id="list">
         <% @lists.each do |list|%>
-          <li class="list-item"><%= list.ingredient.name %></li>
+          <label>
+            <li class="list-item"><input type="checkbox" class="checkbox"><%= list.ingredient.name %><span class="box-icon"><i class="fas fa-trash-alt"></span></i></li>
+          </label>
         <% end %>
       </ul>
 

@@ -12,6 +12,7 @@ body {
 
 $mainColor: rgb(197, 136, 56);
 $subColor: rgb(151, 104, 41);
+$bgColor: rgb(248, 242, 234);
 
 .content {
   padding: 0 180px;
@@ -112,9 +113,22 @@ $subColor: rgb(151, 104, 41);
     font-size: 17px;
     margin: 0 10px 50px;
     list-style: none;
+
+    .checkbox {
+      margin:0 10px 5px 0;
+    }
     
     .list-item {
-      margin: 0 0 10px 10px;
+      padding: 10px;
+      margin: 0 5 10px 5px;
+
+      &:hover {
+        background-color: $bgColor;
+      }
+    }
+
+    .box-icon {
+      float: right;
     }
   }
   

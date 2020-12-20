@@ -1,4 +1,4 @@
-function list () {
+function add () {
   // 追加ボタンを取得
   const submit = document.getElementById("list-submit");
 
@@ -37,7 +37,7 @@ function list () {
 
 
       // 入力された値を描写
-      const HTML = `<li class="list-item">${name}</li>`;
+      const HTML = `<li class="list-item"><input type="checkbox" class="checkbox">${name}<span class="box-icon"><i class="fas fa-trash-alt"></span></i></li>`;
 
       // 描写を挿入
       list.insertAdjacentHTML("beforeend", HTML);
@@ -52,4 +52,9 @@ function list () {
 
 }
 
-window.addEventListener("load", list);
+function destroy () {
+  console.log("てすと")
+}
+
+window.addEventListener("load", add);
+window.addEventListener("load", destroy);
