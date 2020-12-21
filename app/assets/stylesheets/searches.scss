@@ -1,3 +1,36 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$mainColor: rgb(197, 136, 56);
+$subColor: rgb(151, 104, 41);
+$bgColor: rgb(248, 242, 234);
+
+.result-title {
+  font-size: 30px;
+  margin: 5px 0 20px 0;
+  color: $subColor;
+}
+
+
+.result-recipe {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted $mainColor;
+  padding: 10px 0 10px;
+  font-size: 23px;
+  margin: 0 0 10px 20px; 
+  text-decoration: none;
+  color: $subColor; 
+  
+  .recipe-link {
+    text-decoration: none;
+    color: $subColor;
+
+    &.recipe-site-link {
+      font-size: 19px;
+      padding-top: 12px;
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+<div class="content">
+  <%= render "shared/top-content" %>
+  <%= render "shared/menu-bar" %>
+  <div class="main-contents">
+    <%= render "shared/side-bar" %>
+    
+    <div class="result">
+    <div class="result-title">「<%= @keyword  %>」の検索結果</div>
+
+    <% @recipes.each do |recipe| %>
+      <div class="result-recipe">
+        <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
+        </div>
+    <% end %>
+    
+    </div>
+
+  </div>
+  <div class="bottom-content">
+    <%= render "shared/bottom-content"%>
+  </div>
+</div>
+
