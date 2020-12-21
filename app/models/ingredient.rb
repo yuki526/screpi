@@ -7,4 +7,9 @@ class Ingredient < ApplicationRecord
 
   has_many :lists
   has_many :users, through: :lists
+
+  def self.search(search)
+    recipes = Ingredient.where('name LIKE(?)', "%#{search}%").includes(:recipe)
+    return recipes
+  end
 end
