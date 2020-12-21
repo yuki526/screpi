@@ -16,8 +16,8 @@
   
   <%# 検索（送信ボタンは）一体化する予定 %>
   <div class="top-search">
-    <%= form_with url:'/', method: :get, local: true do |f| %>
-      <%= f.text_field :keyword, class: "search-form" %>
+    <%= form_with url:result_searches_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, class: "search-form", placeholder: "レシピ名検索" %>
       <%= button_tag :type => "submit", class: "search-button" do %>
         <i class="fa fa-search"></i>
       <% end %>

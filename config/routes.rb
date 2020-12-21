@@ -20,12 +20,12 @@ Rails.application.routes.draw do
     end
   end 
 
-  resources :search, only: [:index] do 
-    member do
+  resources :searches, only: [:index] do 
+    collection do
       get 'result'
     end
   end
-  
+
   resources :favorite_recipes, only: [:new, :create]
 
   resources :lists, only: [:create, :destroy]

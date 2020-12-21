@@ -11,4 +11,11 @@ class Recipe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :site_type
   belongs_to :effort_level
+
+
+  def self.search(search)
+    recipes = Recipe.where('title LIKE(?)', "%#{search}%")
+    return recipes
+  end
+
 end
