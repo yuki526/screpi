@@ -106,7 +106,7 @@
           <div class="communication">
             <%= link_to 'マイレシピ登録', new_favorite_recipe_path(recipe_id: @recipe.id), class:"com-link" %>
           </div>
-          <div class="communication"><%= link_to 'ブログを書く', "/", class:"com-link" %></div>
+          <div class="communication"><%= link_to 'ブログを書く', new_recipe_blog_path(@recipe.id), class:"com-link" %></div>
         </div>
       <% end %>
 

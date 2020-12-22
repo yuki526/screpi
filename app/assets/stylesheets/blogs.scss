@@ -1,3 +1,58 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$mainColor: rgb(197, 136, 56);
+$subColor: rgb(151, 104, 41);
+$bgColor: rgb(248, 242, 234);
+
+.new-blog {
+  .new-title {
+    font-size: 30px;
+    margin: 5px 0 20px 0;
+    color: $subColor;
+  }
+
+  .related-recipe {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .recipe-show-link {
+    margin: 20px 0 10px;
+    color: $mainColor;
+  }
+
+  .label {
+    margin: 10px 0;
+  }
+
+  .new-blog-form {
+    font-size: 23px;
+  }
+
+  .new-blog-form-field {
+    height: 26px;
+    width: 270px;
+    border: 1px solid $mainColor;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    
+  }
+
+  .blog-add-button {
+      font-size: 20px;
+      height: 40px;
+      width: 130px;
+      color: white;
+      background-color: $subColor;
+      border: none;
+      border-radius: 1ch;
+      display: block;
+      margin: 20px auto 0;
+      
+      &:hover {
+        cursor: pointer;
+      }
+  }
+}

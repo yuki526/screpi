@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
   before_action :authenticate, only: [:mypage, :new, :create, :destroy]
-  before_action :set_list
 
   def index
     @new_videos = Recipe.where(site_type_id: 2).order("created_at DESC").limit(3)
