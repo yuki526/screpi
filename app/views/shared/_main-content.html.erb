@@ -36,7 +36,7 @@
       <% @new_blogs.each do |blog| %>
         <div class="new-blog-article">
           <div class="article-data">
-            <div class="article-date"><%= l blog.created_at %></div>
+            <div class="article-date"><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %></div>
           <div class="article-user">Posted by <%= blog.user.name %></div>
           </div>
           <%= link_to blog.title, recipe_blog_path(recipe_id: blog.recipe_id, id: blog.id), class: "article-title" %>
