@@ -10,10 +10,17 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to mypage_recipe_path(current_user)
+      redirect_to mypage_recipe_path(current_user.id)
     else
       render :new
     end
+  end
+
+  def show
+    @blog = Blog.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = BlogComment.new
+    @comments = BlogComment.where(blog_id: @blog.id).order("created_at DESC")
   end
 
   def destroy

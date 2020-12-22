@@ -33,27 +33,15 @@
     <div class="new-blog-head">新着ブログ</div>
 
     <div class="new-blog-articles">
-      <div class="new-blog-article">
-        <div class="article-data">
-          <div class="article-date">2020-12-2 Wed</div>
-          <div class="article-user">Posted by ゆゆゆ</div>
+      <% @new_blogs.each do |blog| %>
+        <div class="new-blog-article">
+          <div class="article-data">
+            <div class="article-date"><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+          <div class="article-user">Posted by <%= blog.user.name %></div>
+          </div>
+          <%= link_to blog.title, recipe_blog_path(recipe_id: blog.recipe_id, id: blog.id), class: "article-title" %>
         </div>
-          <%= link_to "パリパリステーキおいしすぎ！", "/", class: "article-title" %>
-      </div>
-      <div class="new-blog-article">
-        <div class="article-data">
-          <div class="article-date">2020-12-1 Tue</div>
-          <div class="article-user">Posted by さらばファン</div>
-        </div>
-          <%= link_to "しりしり器を買ったのでにんじんしりしりを作ってみた", "/", class: "article-title" %>
-      </div>
-      <div class="new-blog-article">
-        <div class="article-data">
-          <div class="article-date">2020-11-29 Sun</div>
-          <div class="article-user">Posted by コウさん</div>
-        </div>
-          <%= link_to "肉じゃがのじゃがいもは男爵？それともメークイン？はたまた…", "/", class: "article-title" %>
-      </div>
+      <% end %>
     </div>
   </div>
 

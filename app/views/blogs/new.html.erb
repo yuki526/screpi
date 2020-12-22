@@ -5,18 +5,19 @@
     <%= render "shared/side-bar" %>
 
 
-    <div class="recipe">
-      <div class="new-title">ブログ追加</div>
-      <div class="new-recipe-form">
+    <div class="blog">
+      <div class="title">ブログ追加</div>
+      <div class="related-recipe"> 関連レシピ：<%= link_to @recipe.title, recipe_path(@recipe.id), class:"recipe-show-link" %></div>
+      <div class="new-blog-form">
       <%= form_with model: [@recipe, @blog], local: true do |f| %>
-        <div class="new-recipe-title">title</div>
-        <%= f.text_field :title, class: "new-recipe-form-field"%>
+        <div class="label">title</div>
+        <%= f.text_field :title, class: "new-blog-form-field"%>
 
-        <div class="recipe-content">本文</div>
+        <div class="label">本文</div>
         <%= f.rich_text_area :content, class: "new-recipe-rich-text-form"%>
 
 
-        <%= f.submit '追加', class: "list-add-button" %>
+        <%= f.submit '追加', class: "blog-add-button" %>
       <% end %>
     </div>
 

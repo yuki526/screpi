@@ -1,5 +1,5 @@
 class RecipeCommentsController < ApplicationController
-before_action :authenticate
+  before_action :authenticate
 
   def create
     @comment = RecipeComment.new(comment_params)
