@@ -16,6 +16,13 @@ class BlogsController < ApplicationController
     end
   end
 
+  def show
+    @blog = Blog.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = BlogComment.new
+    @comments = BlogComment.where(blog_id: @blog.id).order("created_at DESC")
+  end
+
   def destroy
     blog = Blog.find(params[:id])
     blog.destroy

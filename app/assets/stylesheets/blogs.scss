@@ -6,8 +6,13 @@ $mainColor: rgb(197, 136, 56);
 $subColor: rgb(151, 104, 41);
 $bgColor: rgb(248, 242, 234);
 
-.new-blog {
-  .new-title {
+// new show
+
+.blog {
+  display: flex;
+  flex-direction: column;
+
+  .title {
     font-size: 30px;
     margin: 5px 0 20px 0;
     color: $subColor;
@@ -54,5 +59,38 @@ $bgColor: rgb(248, 242, 234);
       &:hover {
         cursor: pointer;
       }
+  }
+}
+
+
+// show
+
+.blog-show-main {
+  color: $subColor;
+  display: block;
+  width: 180%;
+  background-color: $bgColor;
+  margin: 10px 0 10px;
+  padding: 30px;
+  border: 1px solid $bgColor;
+  border-radius: 50px;
+}
+
+
+.blog-show-admin {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0 10px;
+  font-size: 18px;
+  
+
+  .edit {
+    margin: 1px;
+    color: $mainColor;
+  }
+
+  .delete {
+    color: $mainColor;
+    margin: 1px;
   }
 }
