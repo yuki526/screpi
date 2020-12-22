@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
   def index
     @new_videos = Recipe.where(site_type_id: 2).order("created_at DESC").limit(3)
     @new_recipes = Recipe.where.not(site_type_id: 2).order("created_at DESC").page(params[:page]).per(5)
+    @new_blogs = Blog.order("created_at DESC").limit(5).includes(:user)
   end
   
   def about

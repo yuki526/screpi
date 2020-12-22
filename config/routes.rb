@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :recipe_comments, only: [:create]
 
-    resources :blogs, only: [:new, :create, :destroy] do
+    resources :blogs, only: [:new, :create, :show, :destroy] do
       resources :blog_comments, only: [:create]
     end
 
