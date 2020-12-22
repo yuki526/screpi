@@ -44,15 +44,34 @@
       </div>
 
       <div class="my-blogs">
-        <div class="my-blogs-head">ブログ</div>
-        <div class="my-blogs-head">
-          
+        <div class="my-blog-head">
+          <div class="my-recipe-head-title">マイブログ</div>
+          <%# 検索 %>
+          <div class="my-recipe-search">
+            <%= form_with url:'/', method: :get, local: true do |f| %>
+              <%= f.text_field :keyword, class: "search-form" %>
+              <%= button_tag :type => "submit", class: "search-button" do %>
+                <i class="fa fa-search"></i>
+              <% end %>
+            <% end %>
+          </div> 
         </div>
 
-      
-      
+        <%# ブログ一覧 %>
+        <% @my_blogs.each do |blog| %>
+          <div class="my-recipe">
+            <div class="my-recipe-title">
+              <%= link_to blog.title, recipe_blog_path(recipe_id: blog.recipe_id, id: blog.id), class:"recipe-link" %>
+            </div>
+            <div class="my-recipe-data">
+              <div class="my-blog-date">
+                <%= blog.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @my_blogs %>
       </div>
-
     </div>
   </div>
 

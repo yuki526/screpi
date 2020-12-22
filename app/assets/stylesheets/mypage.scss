@@ -4,38 +4,40 @@ $bgColor: rgb(248, 242, 234);
 
 .my-page {
   width: 100%;
+  margin-bottom: 60px;
+}
+
+.my-recipes {
+  margin-bottom: 40px;
 }
 
 .my-recipe-head {
   display: flex;
-  font-size: 30px;
   margin: 5px 0 20px 0;
-  color: $subColor;
-
-  .my-recipe-head-title {
-    margin-right: 30px;
-  }
-
-  .my-recipe-search {
-    margin-bottom: 5px;
-
-    .search-form {
-    height: 27px;
-    width: 170px;
-    border: 1px solid $mainColor;
-    border-radius: 5px;
-  }
   
-    .search-button {
-      font-size: 23px;
-      color: $mainColor;
-      border: none;
-      background-color: white;
+}
+.my-recipe-head-title {
+  font-size: 30px;
+  color: $subColor;
+  margin-right: 30px;
+}
 
-      &:hover {
-        cursor: pointer;
+.my-recipe-search {
+  margin-bottom: 5px;
+  .search-form {
+  height: 27px;
+  width: 170px;
+  border: 1px solid $mainColor;
+  border-radius: 5px;
+  }
 
-      }
+  .search-button {
+    font-size: 23px;
+    color: $mainColor;
+    border: none;
+    background-color: white;
+    &:hover {
+      cursor: pointer;
     }
   }
 }
@@ -61,4 +63,14 @@ $bgColor: rgb(248, 242, 234);
   .my-recipe-url {
     margin: 10px 0;
   }
+}
+
+.my-blog-head {
+  display: flex;
+  margin: 5px 0 20px 0;
+  
+}
+
+.my-blog-date {
+  margin-top: 15px;
 }
