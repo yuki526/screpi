@@ -11,7 +11,7 @@
         <div class="title"><%= @blog.title %></div>
         <div class="related-recipe">
           関連レシピ：<%= link_to @recipe.title, recipe_path(@recipe.id), class:"recipe-show-link" %><br><br>
-          <%= l @blog.created_at %>
+          <%= @blog.created_at.strftime('%Y/%m/%d %H:%M') %>
         </div>
         <div class="blog-show-main">
           <%= @blog.content %> 
@@ -19,7 +19,7 @@
       </div>
 
       <%# コメント欄 %>
-      <div class="recipe-show-comments">
+      <div class="blog-show-comments">
         <div class="comment-title">Comments</div>
         <div class="comments">
           <% if @comments %>
