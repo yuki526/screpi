@@ -32,7 +32,7 @@
         </div>
         <% if user_signed_in? %>
           <div class="comment-add-form">
-            <%= form_with url: recipe_recipe_comments_path(@recipe), model: [@recipe, @comment], method: :post, local: true do |f| %>
+            <%= form_with url: recipe_blog_blog_comments_path(recipe_id: @recipe.id, blog_id: @blog.id), model: [@recipe, @blog, @comment], method: :post, local: true do |f| %>
               <%= f.text_field :text, class: "comment-field"%>
               <%= f.submit '投稿', class: "comment-add-button" %>
             <% end %>
