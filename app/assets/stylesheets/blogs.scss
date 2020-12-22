@@ -81,10 +81,16 @@ $bgColor: rgb(248, 242, 234);
   border-radius: 50px;
 }
 
+.username {
+  font-size: 16px;
+  text-align: right;
+}
+
 
 .blog-show-admin {
   display: flex;
   justify-content: flex-end;
+  
   margin: 5px 0 10px;
   font-size: 18px;
   

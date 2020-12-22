@@ -4,8 +4,6 @@
   <div class="main-contents">
     <%= render "shared/side-bar" %>
 
-<%# /////////////////////////////////////// %>
-
     <div class="blog">
       <div class="blog-show">
         <div class="title"><%= @blog.title %></div>
@@ -40,14 +38,14 @@
         <% end %>
       </div>
 
-      <div class="blog-show-admin">
         <div class="username"> Posted by <%= @blog.user.name %></div>
+      <div class="blog-show-admin">
 
         <%# 投稿者の場合は編集・削除リンクを表示 %>
         <% if user_signed_in? %>
-          <% if @recipe.user_id == current_user.id %>
+          <% if @blog.user_id == current_user.id %>
             <div class="edit"><%= link_to 'edit', edit_recipe_path(@recipe), class: "edit" %></div>
-            <div class="delete"><%= link_to 'delete', recipe_path(@recipe), method: :delete, class: "delete" %></div>
+            <div class="delete"><%= link_to 'delete', recipe_blog_path(recipe_id:@recipe.id, blog_id: @blog.id), method: :delete, class: "delete" %></div>
           <% end %>
         <% end %>
       </div>
