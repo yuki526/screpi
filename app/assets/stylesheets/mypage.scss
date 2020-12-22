@@ -22,25 +22,6 @@ $bgColor: rgb(248, 242, 234);
   margin-right: 30px;
 }
 
-.my-recipe-search {
-  margin-bottom: 5px;
-  .search-form {
-  height: 27px;
-  width: 170px;
-  border: 1px solid $mainColor;
-  border-radius: 5px;
-  }
-
-  .search-button {
-    font-size: 23px;
-    color: $mainColor;
-    border: none;
-    background-color: white;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
 
 .my-recipe {
   border-bottom: 1px dotted $mainColor;

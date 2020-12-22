@@ -9,15 +9,7 @@
       <div class="my-recipes">
         <div class="my-recipe-head">
           <div class="my-recipe-head-title">マイレシピ</div>
-          <%# 検索 %>
-          <div class="my-recipe-search">
-            <%= form_with url:'/', method: :get, local: true do |f| %>
-              <%= f.text_field :keyword, class: "search-form" %>
-              <%= button_tag :type => "submit", class: "search-button" do %>
-                <i class="fa fa-search"></i>
-              <% end %>
-            <% end %>
-          </div>
+          
         </div>
 
         <%# レシピ一覧 %>
@@ -46,15 +38,7 @@
       <div class="my-blogs">
         <div class="my-blog-head">
           <div class="my-recipe-head-title">マイブログ</div>
-          <%# 検索 %>
-          <div class="my-recipe-search">
-            <%= form_with url:'/', method: :get, local: true do |f| %>
-              <%= f.text_field :keyword, class: "search-form" %>
-              <%= button_tag :type => "submit", class: "search-button" do %>
-                <i class="fa fa-search"></i>
-              <% end %>
-            <% end %>
-          </div> 
+          
         </div>
 
         <%# ブログ一覧 %>
