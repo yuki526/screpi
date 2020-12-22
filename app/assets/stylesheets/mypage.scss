@@ -1,0 +1,57 @@
+$mainColor: rgb(197, 136, 56);
+$subColor: rgb(151, 104, 41);
+$bgColor: rgb(248, 242, 234);
+
+.my-page {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.my-recipes {
+  margin-bottom: 40px;
+}
+
+.my-recipe-head {
+  display: flex;
+  margin: 5px 0 20px 0;
+  
+}
+.my-recipe-head-title {
+  font-size: 30px;
+  color: $subColor;
+  margin-right: 30px;
+}
+
+
+.my-recipe {
+  border-bottom: 1px dotted $mainColor;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  .my-recipe-title {
+    padding: 10px 0 10px;
+    font-size: 23px;
+    margin: 0 0 10px 20px; 
+  }
+  
+  .recipe-link {
+    color: $subColor; 
+    text-decoration: none;
+    
+  }
+
+  .my-recipe-url {
+    margin: 10px 0;
+  }
+}
+
+.my-blog-head {
+  display: flex;
+  margin: 5px 0 20px 0;
+  
+}
+
+.my-blog-date {
+  margin-top: 15px;
+}
