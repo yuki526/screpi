@@ -7,16 +7,17 @@
     <div class="my-page">
     
       <div class="my-recipes">
-        <div class="my-recipes-head">マイレシピ</div>
-
-        <%# 検索 %>
-        <div class="my-recipe-search">
-          <%= form_with url:'/', method: :get, local: true do |f| %>
-            <%= f.text_field :keyword, class: "search-form" %>
-            <%= button_tag :type => "submit", class: "search-button" do %>
-              <i class="fa fa-search"></i>
+        <div class="my-recipe-head">
+          <div class="my-recipe-head-title">マイレシピ</div>
+          <%# 検索 %>
+          <div class="my-recipe-search">
+            <%= form_with url:'/', method: :get, local: true do |f| %>
+              <%= f.text_field :keyword, class: "search-form" %>
+              <%= button_tag :type => "submit", class: "search-button" do %>
+                <i class="fa fa-search"></i>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
 
         <%# レシピ一覧 %>
@@ -25,15 +26,17 @@
             <div class="my-recipe-title">
               <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
             </div>
-            <div class="my-recipe-date">
-              <%= l recipe.created_at %>
-            </div>
-            <div class="my-recipe-url">
-              <% if recipe.site_type_id == 2 %>
-                <%= link_to "youtube", "https://youtu.be/#{recipe.url}", target: :_blank, rel: "noopener noreferrer", class: "recipe-link recipe-site-link" %>
-              <% else %>
-                <%= link_to recipe.site_type.name, recipe.url, target: :_blank, rel: "noopener noreferrer", class:"recipe-link recipe-site-link" %>
-              <% end %>
+            <div class="my-recipe-data">
+              <div class="my-recipe-date">
+                <%= recipe.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </div>
+              <div class="my-recipe-url">
+                <% if recipe.site_type_id == 2 %>
+                  <%= link_to "youtube", "https://youtu.be/#{recipe.url}", target: :_blank, rel: "noopener noreferrer", class: "recipe-link recipe-site-link" %>
+                <% else %>
+                  <%= link_to recipe.site_type.name, recipe.url, target: :_blank, rel: "noopener noreferrer", class:"recipe-link recipe-site-link" %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
