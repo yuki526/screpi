@@ -71,12 +71,15 @@
           <div class="comment-title">Comments</div>
           <div class="comments">
             <% @comments.each do |comment| %>
-              <div class="comment"><%= comment.text %>
-                <div class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
-              </div><br>
+              <div class="comment-block">
+                <i class="<%= comment.user.user_icon.name %> user_icon"></i>
+                <div class="comment"><%= comment.text %>
+                  <div class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+                </div><br>
+              </div>
             <% end %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
         <% if user_signed_in? %>
           <div class="comment-add-form">
             <%= form_with url: recipe_recipe_comments_path(@recipe), model: [@recipe, @comment], method: :post, local: true do |f| %>
@@ -90,10 +93,11 @@
       <%# ブログ表示 %>
       <% unless @blogs.empty? %>
         <div class="recipe-show-blogs">
-          <div class="blog-title">Blog</div>
+          <div class="blog-head-title">Blog</div>
           <div class="blogs">
               <% @blogs.each do |blog| %>
-                <div class="blog"><%= blog.title %></div>
+                <div class="blog-title"><%= link_to blog.title, recipe_blog_path(recipe_id: blog.recipe_id, id: blog.id), class: "blog-show-link" %></div>
+                <div class="blog-date"><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %>  Posted by <%= blog.user.name %></div>
               <% end %>
           </div>
         </div>

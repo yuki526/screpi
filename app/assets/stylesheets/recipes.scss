@@ -75,6 +75,10 @@ $bgColor: rgb(248, 242, 234);
   color: white;
   font-size: 22px;
   text-decoration: none;
+
+  &:hover {
+    font-size: 23px;
+  }
 }
 
 
@@ -215,9 +219,10 @@ $bgColor: rgb(248, 242, 234);
       display: flex;
       margin-bottom: 20px;
       
-    
+      
       .new-recipe-image {
         margin-right: 23px;
+
       }
 
     }

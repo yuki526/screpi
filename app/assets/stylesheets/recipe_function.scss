@@ -162,10 +162,15 @@ $bgColor: rgb(248, 242, 234);
   }
 }
 
+.user_icon {
+  font-size: 40px;
+  margin-top: 25px;
+}
+
 
 
 .recipe-show-comments {
-  margin-top: 50px;
+  margin: 50px 0px;
 
   .comment-title {
     font-size: 26px;
@@ -175,6 +180,10 @@ $bgColor: rgb(248, 242, 234);
 
   .comments {
     margin-bottom: 50px;
+
+    .comment-block {
+      display: flex;
+    }
 
     .comment {
       position: relative;
@@ -235,4 +244,31 @@ $bgColor: rgb(248, 242, 234);
       }
     }
   }
+}
+
+  .recipe-show-blogs {
+    margin-bottom: 30px;
+
+    .blog-head-title {
+      font-size: 26px;
+      color: $subColor;
+      margin: 5px 0 15px 0;
+    }
+
+    .blogs {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .blog-show-link {
+      font-size: 23px;
+      text-decoration: none;
+      margin: 20px 0 10px;
+      color: $mainColor;
+      margin-right: 20px;
+    }
+
+    .blog-date {
+      margin-top: 7px;
+    }
 }

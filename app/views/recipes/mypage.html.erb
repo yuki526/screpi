@@ -12,6 +12,7 @@
           
         </div>
 
+
         <%# レシピ一覧 %>
         <% @my_recipes.each do |recipe| %>
           <div class="my-recipe">
@@ -35,13 +36,38 @@
         <%= paginate @my_recipes %>
       </div>
 
+      <div class="my-recipes">
+        <div class="my-recipe-head">
+          <div class="my-recipe-head-title">お気に入りレシピ</div>
+        </div>
+        <%# お気に入りレシピ一覧 %>
+        <% @favorite_recipes.each do |recipe| %>
+          <div class="my-recipe">
+            <div class="my-recipe-title">
+              <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
+            </div>
+            <div class="my-recipe-data">
+              <div class="my-recipe-date">
+                <%= recipe.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </div>
+              <div class="my-recipe-url">
+                <% if recipe.site_type_id == 2 %>
+                  <%= link_to "youtube", "https://youtu.be/#{recipe.url}", target: :_blank, rel: "noopener noreferrer", class: "recipe-link recipe-site-link" %>
+                <% else %>
+                  <%= link_to recipe.site_type.name, recipe.url, target: :_blank, rel: "noopener noreferrer", class:"recipe-link recipe-site-link" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @favorite_recipes %>
+      </div>
+
+      <%# ブログ一覧 %>
       <div class="my-blogs">
         <div class="my-blog-head">
           <div class="my-recipe-head-title">マイブログ</div>
-          
         </div>
-
-        <%# ブログ一覧 %>
         <% @my_blogs.each do |blog| %>
           <div class="my-recipe">
             <div class="my-recipe-title">

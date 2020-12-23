@@ -10,4 +10,7 @@ class User < ApplicationRecord
   has_many :favorite_recipes
   has_many :lists, dependent: :destroy
   has_many :ingredients, through: :lists
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :user_icon
 end

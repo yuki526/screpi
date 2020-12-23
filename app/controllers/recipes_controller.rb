@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   def mypage
     @my_recipes = Recipe.where(user_id: current_user).order("created_at DESC").page(params[:page]).per(5)
     @my_blogs = Blog.where(user_id: current_user).order("created_at DESC").page(params[:page]).per(5)
+    @favorite_recipes = FavoriteRecipe.where(user_id: current_user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
