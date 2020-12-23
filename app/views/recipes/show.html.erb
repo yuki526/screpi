@@ -102,7 +102,7 @@
       <%# コミュニティ欄 %>
       <% if user_signed_in? %>
         <div class="communications">
-          <div class="communication"><%= link_to 'おいしそう！', "/", class:"com-link" %></div>
+          <div class="communication"><%= link_to "/", class:"com-link" do%><i class="fas fa-heart"></i> おいしそう！<% end %></div>
           <div class="communication">
             <%= link_to 'マイレシピ登録', new_favorite_recipe_path(recipe_id: @recipe.id), class:"com-link" %>
           </div>
