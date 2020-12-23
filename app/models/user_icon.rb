@@ -5,7 +5,7 @@ class UserIcon < ActiveHash::Base
     { id: 3, name: 'fas fa-carrot'},     # carrot
     { id: 4, name: 'fas fa-fish'},       # fish
     { id: 5, name: 'fas fa-mug-hot'},    # mug
-    { id: 6, name: 'fas fa-pepper-hot'}  # pepper
+    { id: 6, name: 'fas fa-cat'}         # cat
   ]
 
   include ActiveHash::Associations
