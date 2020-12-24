@@ -1,0 +1,74 @@
+<div class="content">
+  <%= render "shared/top-content" %>
+  <%= render "shared/menu-bar" %>
+
+  <div class="main-contents">
+    <%= render "shared/side-bar" %>
+
+    <div class="recipe-show-block">
+      <div class="recipe-show">
+        <div class="recipe-title"><%= @recipe.title %></div>
+        <%# youtubeの場合 %>
+        <% if @recipe.site_type_id == 2 %>
+          <div class="recipe-show-content">
+            <div class="recipe-show-youtube">
+              <iframe width="300" height="220" src="https://www.youtube.com/embed/<%= @recipe.url %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="recipe-show-youtube-others">
+              <div class="recipe-show-link">
+                <%= link_to "https://youtu.be/#{@recipe.url}",target: :_blank, rel: "noopener noreferrer", class:"recipe-show-link" do %>
+                  レシピを見る<i class="fa fa-external-link" aria-hidden="true"></i>
+                <% end %>
+              </div>
+              <div class="recipe-show-ingredients">
+                素材：
+                <% @ingredients.each do |ingredient| %>
+                  <%= ingredient.name %>
+                <% end %>
+              </div>
+              <div class="recipe-show-effort">
+                手間度：<%= render "shared/effort-level-show", model: @recipe %>
+              </div>
+            </div>
+          </div>
+
+        <% else %>
+        <%# それ以外の場合 %>
+          <div class="recipe-show-content other">
+            <%= link_to @recipe.url, target: :_blank, rel: "noopener noreferrer", class: "recipe-show-link" do %>
+              レシピを見る<i class="fa fa-external-link" aria-hidden="true"></i>
+            <% end %>
+            <div class="recipe-show-ingredients">
+              素材：
+              <% @ingredients.each do |ingredient| %>
+                <%= ingredient.name %>
+              <% end %>
+            </div>
+            <div class="recipe-show-effort">
+              手間度：<%= render "shared/effort-level-show", model: @recipe %>
+            </div>
+          </div>
+        <% end %>
+        <div class="username">Posted by <%= @recipe.user.name %></div>
+      </div>
+
+      <%# 投稿者の場合はレシピ本文と編集・削除リンクを表示 %>
+      <% if user_signed_in? %>
+        <% if @recipe.user_id == current_user.id %>
+          <div class="recipe-show-admin">
+            <div class="edit"><%= link_to 'edit', "/", class: "edit" %></div>
+            <div class="delete"><%= link_to 'delete', "/", method: :delete, class: "delete" %></div>
+          </div>
+          <div class="recipe-show-main">
+            <%= @recipe.content %> 
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="bottom-content">
+    <%= render "shared/bottom-content"%>
+  </div>
+</div>

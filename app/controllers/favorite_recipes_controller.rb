@@ -32,6 +32,11 @@ class FavoriteRecipesController < ApplicationController
     redirect_to mypage_recipe_path(current_user.id)
   end
 
+  def show
+    @recipe = FavoriteRecipe.includes(:user).find(params[:id])
+    @ingredients = FavoriteRecipeIngredient.set_ingredient(@recipe)
+  end
+
 
   private
   
