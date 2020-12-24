@@ -20,18 +20,26 @@ $bgColor: rgb(248, 242, 234);
     margin-bottom: 50px;
     width: 100%;
 
+    .comment-block {
+      display: flex;
+    }
+
     .comment {
       position: relative;
       display: block;
       margin: 1em 0 0 20px;
       padding: 20px 20px 10px 20px;
-      min-width: 120px;
+      min-width: 150px;
       max-width: 60%;
       width: 100%;
       color: #555;
       font-size: 16px;
       background: $bgColor;
       border-radius: 10px;
+
+      .blank {
+        color: $bgColor;
+      }
     }
     
     .comment:before {

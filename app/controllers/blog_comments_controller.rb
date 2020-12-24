@@ -5,7 +5,6 @@ class BlogCommentsController < ApplicationController
     @comment = BlogComment.new(comment_params)
     @blog = Blog.find(params[:blog_id])
     @recipe = @blog.recipe
-    binding.pry
     if @comment.save
       redirect_to recipe_blog_path(recipe_id: @recipe.id, id: @blog.id) and return
     else
