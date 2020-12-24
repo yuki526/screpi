@@ -44,7 +44,7 @@
         <% @favorite_recipes.each do |recipe| %>
           <div class="my-recipe">
             <div class="my-recipe-title">
-              <%= link_to recipe.title, recipe_path(recipe.id), class:"recipe-link" %>
+              <%= link_to recipe.title, favorite_recipe_path(recipe.id), class:"recipe-link" %>
             </div>
             <div class="my-recipe-data">
               <div class="my-recipe-date">
