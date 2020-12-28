@@ -14,8 +14,18 @@
 
     <%= link_to "詳細検索", "/", class: "menu-bar-element" %>
     
-    <%= link_to "使い方", instruction_recipes_path, class: "menu-bar-element" %>
+    <%# link_to "使い方", instruction_recipes_path, class: "menu-bar-element" %>
+
+    <%# 検索 %>
+    <div class="top-search">
+        <%= form_with url:result_searches_path, method: :get, local: true do |f| %>
+            <%= f.text_field :keyword, class: "search-form", placeholder: "レシピ名検索" %>
+            <%= button_tag :type => "submit", class: "search-button" do %>
+            <i class="fa fa-search"></i>
+            <% end %>
+        <% end %>
+    </div>
     
-    <%= link_to "分量計算機", "/", class: "menu-bar-element" %>
+    <%# link_to "分量計算機", "/", class: "menu-bar-element" %>
 
 </div>
