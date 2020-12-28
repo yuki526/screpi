@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :blog_comments, only: [:create]
     end
 
+    resources :likes, only: [:create, :destroy]
+
     member do
       get 'mypage'
     end

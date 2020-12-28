@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
   has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
   has_many :favorite_recipes
+  has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user 
 
   has_rich_text :content
 
