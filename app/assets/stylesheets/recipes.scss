@@ -36,7 +36,7 @@ $bgColor: rgb(248, 242, 234);
 
 .top-search {
   text-align: right;
-
+  
   .search-form {
     height: 32px;
     width: 170px;
@@ -46,9 +46,9 @@ $bgColor: rgb(248, 242, 234);
   
   .search-button {
     font-size: 23px;
-    color: $mainColor;
+    color: white;
     border: none;
-    background-color: white;
+    background-color: $subColor;
     &:hover {
       cursor: pointer;
 
