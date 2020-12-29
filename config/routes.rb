@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :searches, only: [:index] do 
     collection do
       get 'result'
+      get 'ingredient'
     end
   end
 

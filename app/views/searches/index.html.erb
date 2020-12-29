@@ -1,0 +1,23 @@
+<div class="content">
+  <%= render "shared/top-content" %>
+  <%= render "shared/menu-bar" %>
+  <div class="main-contents">
+    <%= render "shared/side-bar" %>
+    
+      <%# 素材名検索 %>
+    <div class="ingredient-search">
+      <div class="search-title">素材名入力</div>
+      <%= form_with url: ingredient_searches_path, method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, class: "search-form" %>
+        <%= button_tag :type => "submit", class: "search-button" do %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="bottom-content">
+    <%= render "shared/bottom-content"%>
+  </div>
+</div>
+

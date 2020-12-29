@@ -38,3 +38,33 @@ $bgColor: rgb(248, 242, 234);
   }
 }
 
+.ingredient-search{
+margin-top: 20px;
+
+  .search-title {
+    color: $mainColor;
+    font-size: 23px;
+    display: inline-block;
+    
+  }
+
+  .search-form {
+    height: 32px;
+    width: 170px;
+    border: 1px solid $mainColor;
+    border-radius: 5px;
+  }
+  
+  .search-button {
+    
+    font-size: 23px;
+    color: $mainColor;
+    border: none;
+    background-color: white;
+    &:hover {
+      cursor: pointer;
+      
+    }
+  }
+}
+
