@@ -24,7 +24,7 @@ class FavoriteRecipesController < ApplicationController
     end
 
     # お気に入りレシピの各項目設定
-    favorite_recipe = FavoriteRecipe.set_favorite_recipe(recipe, original_recipe, current_user.id)
+    favorite_recipe = recipe.set_favorite_recipe(recipe, original_recipe, current_user.id)
 
     # 入力に不正がある場合は追加ページへ戻す
     unless favorite_recipe.valid?

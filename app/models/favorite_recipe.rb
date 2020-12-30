@@ -19,9 +19,7 @@ class FavoriteRecipe < ApplicationRecord
   end
 
 
-  private
-
-  def self.set_favorite_recipe(favorite_recipe, original_recipe, current_user_id)
+  def set_favorite_recipe(favorite_recipe, original_recipe, current_user_id)
 
     # 各項目をセット（素材以外）
     favorite_recipe.title = original_recipe.title

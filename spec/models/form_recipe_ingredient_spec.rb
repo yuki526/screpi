@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe FormRecipeIngredient, type: :model do
+  describe '#save' do
   before do
     @form_recipe_ingredient = FactoryBot.build(:form_recipe_ingredient)
   end

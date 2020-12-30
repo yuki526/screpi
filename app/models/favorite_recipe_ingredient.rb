@@ -2,7 +2,7 @@ class FavoriteRecipeIngredient < ApplicationRecord
   belongs_to :favorite_recipe
   belongs_to :ingredient
 
-  def self.set_ingredient(recipe)
+  def set_ingredient(recipe)
     @ingredients_id = FavoriteRecipeIngredient.where(favorite_recipe_id: recipe.id)
     names = Array.new
     @ingredients_id.each do |id|
@@ -13,7 +13,7 @@ class FavoriteRecipeIngredient < ApplicationRecord
   end
 
 
-  def self.set_favorite_recipe_ingredients(favorite_recipe, original_recipe)
+  def set_favorite_recipe_ingredients(favorite_recipe, original_recipe)
 
     # 材料を一つずつ登録or既存データを取り出し、idを配列に格納
     ingredients_array = Array.new
