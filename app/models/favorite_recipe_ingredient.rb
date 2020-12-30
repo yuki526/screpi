@@ -13,7 +13,9 @@ class FavoriteRecipeIngredient < ApplicationRecord
   end
 
 
-  def set_favorite_recipe_ingredients(favorite_recipe, original_recipe)
+  private
+
+  def self.set_favorite_recipe_ingredients(favorite_recipe, original_recipe)
 
     # 材料を一つずつ登録or既存データを取り出し、idを配列に格納
     ingredients_array = Array.new

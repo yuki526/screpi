@@ -17,7 +17,7 @@ class FavoriteRecipesController < ApplicationController
     recipe = FavoriteRecipe.new(favorite_recipe_params)
 
     # お気に入りに登録済の場合は追加ページへ戻す
-    if FavoriteRecipe.find_by(recipe_id: original_recipe.id)
+    if FavoriteRecipe.find_by(recipe_id: original_recipe.id, user_id: current_user.id)
       @recipe = original_recipe
       @ingredients = @recipe.ingredients
       redirect_to new_favorite_recipe_path(recipe_id: @recipe.id), flash: {notice: "お気に入りに登録済レシピです"} and return

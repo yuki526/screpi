@@ -15,7 +15,6 @@ class FavoriteRecipe < ApplicationRecord
     validates :url
     validates :site_type_id
     validates :effort_level_id
-    validates :recipe_id, uniqueness: true
   end
 
 
