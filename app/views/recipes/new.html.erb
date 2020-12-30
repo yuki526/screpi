@@ -9,8 +9,7 @@
       <div class="new-title">あたらしいマイレシピを追加</div>
         <div class="new-recipe-form">
           <%= form_with model: @form_recipe_ingredient, url: recipes_path, local: true do |f| %>
-            <%= render "shared/error-messages", model: f.object %>
-            <% if flash[:notice] %>
+            <% if flash[:notice] && flash[:notice] == "正しく入力されていません" %>
               <div class="flash"><%= flash[:notice] %></div>
             <% end %>
             <div class="label">レシピ名</div>

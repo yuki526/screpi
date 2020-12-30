@@ -22,8 +22,6 @@ class SearchesController < ApplicationController
     else
       redirect_to searches_path
     end
-
   end
-
 
 end

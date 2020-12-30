@@ -9,6 +9,9 @@
       <div class="new-title">マイレシピに追加</div>
         <div class="new-recipe-form">
           <%= form_with model: @favorite_recipe, url: favorite_recipes_path, local: true do |f| %>
+            <% if flash[:notice] && (flash[:notice] == "正しく入力されていません" || flash[:notice] == "お気に入りに登録済レシピです") %>
+              <div class="flash"><%= flash[:notice] %></div>
+            <% end %>
             <div class="label add-favorite">レシピ名：<%= @recipe.title %></div>
 
             <div class="label add-favorite">
