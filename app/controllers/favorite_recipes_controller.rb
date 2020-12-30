@@ -2,9 +2,12 @@ class FavoriteRecipesController < ApplicationController
   before_action :authenticate
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.includes(:user).find(params[:recipe_id])
     @ingredients = @recipe.ingredients
     @favorite_recipe = FavoriteRecipe.new
+    if @recipe.user.id == current_user.id
+      redirect_to recipe_path(@recipe.id) and return
+    end
   end
 
   
@@ -12,6 +15,7 @@ class FavoriteRecipesController < ApplicationController
     # 元のレシピを呼び出し、お気に入りレシピ登録のインスタンスを生成
     original_recipe = Recipe.find(params[:favorite_recipe][:recipe_id])
     recipe = FavoriteRecipe.new(favorite_recipe_params)
+
 
     # お気に入りレシピの各項目設定
     favorite_recipe = set_favorite_recipe(recipe, original_recipe)
