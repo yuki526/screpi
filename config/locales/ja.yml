@@ -7,6 +7,15 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  activemodel:
+    attributes:
+      form_recipe_ingredient:
+        title: タイトル
+        url: URL
+        site_type_id: サイト情報
+        effort_level_id: 手間度
+        name: 素材名
+        content: 本文
   date:
     abbr_day_names:
     - 日
