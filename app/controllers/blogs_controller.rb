@@ -12,6 +12,8 @@ class BlogsController < ApplicationController
     if @blog.save
       redirect_to mypage_recipe_path(current_user.id)
     else
+      @blog = Blog.new
+      @recipe = Recipe.find(params[:recipe_id])
       render :new
     end
   end
