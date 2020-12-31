@@ -7,6 +7,8 @@ ja:
     effort_level_id: 手間度
     name: 素材名
     content: 本文
+    text: 本文
+  activerecord:
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

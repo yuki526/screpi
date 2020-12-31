@@ -8,26 +8,26 @@ RSpec.describe Blog, type: :model do
       @blog = FactoryBot.build(:blog, user_id: @user.id, recipe_id: @recipe.id)
     end
 
-    context "新規ブログ投稿ができる時" do
+    context "ブログ投稿ができる時" do
       it "すべての項目が正しく存在すれば登録できること" do
         expect(@blog).to be_valid
       end
     end
 
-    context "新規ブログ投稿ができない時" do
-      it "タイトルが空だと投稿できない" do
+    context "ブログ投稿ができない時" do
+      it "タイトルが空では投稿できない" do
         @blog.title = nil
         @blog.valid?
         expect(@blog.errors.full_messages).to include("タイトルを入力してください")
       end
 
-      it "タイトルが21文字以上だと登録できない" do
+      it "タイトルが21文字以上では登録できない" do
         @blog.title = "あいうえおかきくけこさしすせそたちつてとな"
         @blog.valid?
         expect(@blog.errors.full_messages).to include("タイトルは20文字以内で入力してください")
       end
 
-      it "本文が空だと投稿できない" do
+      it "本文が空では投稿できない" do
         @blog.content = nil
         @blog.valid?
         expect(@blog.errors.full_messages).to include("本文を入力してください")
