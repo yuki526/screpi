@@ -24,6 +24,13 @@ services:
         - db
       depends_on:
         - db
+      environment:
+      - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
+
+    selenium_chrome:
+      image: selenium/standalone-chrome-debug
+      logging:
+        driver: none
 
 volumes:
   mysql-data:

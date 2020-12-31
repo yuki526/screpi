@@ -22,7 +22,7 @@
     <div class="list-add-form">
       <%= form_with model: @ingredient, url: lists_path, id:"form", method: :post  do |f| %>
         <%= f.text_field :name, class: "list-field", id: "content" %>
-        <%= f.submit '追加', class: "list-add-button", id: "list-submit" %>
+        <%= f.submit '追加', class: "list-add-button", id: "list-submit", name: "list-submit" %>
       <% end %>
     </div>
   
@@ -31,12 +31,12 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <div class="label">Email</div>
-        <%= f.email_field :email, autocomplete: "email", class: "list-field" %>
+        <%= f.email_field :email, autocomplete: "email", class: "list-field", id: "login_email" %>
       </div>
 
       <div class="field">
         <div class="label">Password</div>
-        <%= f.password_field :password, autocomplete: "current-password", class: "list-field" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "list-field", id: "login_password" %>
       </div>
 
 
