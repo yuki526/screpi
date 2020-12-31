@@ -22,7 +22,7 @@
     <div class="list-add-form">
       <%= form_with model: @ingredient, url: lists_path, id:"form", method: :post  do |f| %>
         <%= f.text_field :name, class: "list-field", id: "content" %>
-        <%= f.submit '追加', class: "list-add-button", id: "list-submit" %>
+        <%= f.submit '追加', class: "list-add-button", id: "list-submit", name: "list-submit" %>
       <% end %>
     </div>
   
