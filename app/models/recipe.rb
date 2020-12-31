@@ -14,7 +14,7 @@ class Recipe < ApplicationRecord
   belongs_to :site_type
   belongs_to :effort_level
 
-  private
+
 
   def self.search(search)
     recipes = Recipe.where('title LIKE(?)', "%#{search}%")
