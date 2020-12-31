@@ -5,7 +5,6 @@ FactoryBot.define do
     site_type_id { 3 }
     effort_level_id { 3 }
     content { 'テスト内容テスト内容テスト内容テスト内容テスト内容テスト内容' }
-    name { 'にんじん、じゃがいも、玉ねぎ'}
     
   end
 end
