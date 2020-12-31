@@ -7,6 +7,10 @@ $bgColor: rgb(248, 242, 234);
 
 .recipe {
   width: 82%;
+
+  .flash {
+    color: red;
+  }
   
   .new-title {
     font-size: 30px;

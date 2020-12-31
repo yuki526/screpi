@@ -15,8 +15,18 @@ class Recipe < ApplicationRecord
   belongs_to :effort_level
 
 
+
   def self.search(search)
     recipes = Recipe.where('title LIKE(?)', "%#{search}%")
+    return recipes
+  end
+
+  def self.find_recipes_by_ingredients(recipe_ingredient_ids)
+    recipes = Array.new
+      recipe_ingredient_ids.each do |id|
+        recipe = Recipe.find(id.recipe_id)
+        recipes << recipe
+      end
     return recipes
   end
 

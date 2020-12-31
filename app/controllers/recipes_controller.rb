@@ -26,12 +26,14 @@ class RecipesController < ApplicationController
 
     @form_recipe_ingredient = FormRecipeIngredient.new(recipe_params)
     unless @form_recipe_ingredient.valid?
-      render :new and return
+      redirect_to new_recipe_path, flash: {notice: "正しく入力されていません"} and return
     end
+
     # youtubeの場合はURLを加工
     if @form_recipe_ingredient.site_type_id == "2"
       @form_recipe_ingredient.url = @form_recipe_ingredient.url.last(11)
     end
+    
     @form_recipe_ingredient.save
     redirect_to root_path and return
   end

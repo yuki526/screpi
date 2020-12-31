@@ -8,8 +8,16 @@ class Ingredient < ApplicationRecord
   has_many :lists
   has_many :users, through: :lists
 
+  with_options presence: true do
+    validates :name, length: { maximum: 10 }
+  end
+
+
+
+  private
+
   def self.search(search)
-    recipes = Ingredient.where('name LIKE(?)', "%#{search}%").includes(:recipe)
-    return recipes
+    ingredient = Ingredient.where('name LIKE(?)', "%#{search}%")
+    return ingredient
   end
 end

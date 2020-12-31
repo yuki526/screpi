@@ -12,22 +12,16 @@ class SearchesController < ApplicationController
   def ingredient
     @keyword = params[:keyword]
     if @keyword != ""
-      ingredient = Ingredient.where('name Like ?', "#{@keyword}")
+      ingredient = Ingredient.search(@keyword)
       if ingredient.empty?
-        @recipes = nil
+        @recipes = nil and return
       else
         ids = RecipeIngredient.where(ingredient_id: ingredient[0].id)
-        @recipes = Array.new
-        ids.each do |id|
-          recipe = Recipe.find(id.recipe_id)
-          @recipes << recipe
-        end
+        @recipes = Recipe.find_recipes_by_ingredients(ids)
       end
     else
       redirect_to searches_path
     end
-
   end
-
 
 end

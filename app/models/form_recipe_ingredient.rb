@@ -2,6 +2,13 @@ class FormRecipeIngredient
   include ActiveModel::Model
   attr_accessor :title, :url, :site_type_id, :effort_level_id, :content, :user_id, :name
 
+  with_options presence: true do
+    validates :title, length: { maximum: 20 }
+    validates :url
+    validates :site_type_id
+    validates :effort_level_id
+    validates :name
+  end
 
   def save
     #材料以外のレシピデータを保存
