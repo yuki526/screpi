@@ -13,26 +13,32 @@ RSpec.describe User, type: :model do
     end
 
     context "新規ユーザー登録ができない時" do
-      it "nameが空では登録できないこと" do
+      it "名前が空では登録できないこと" do
         @user.name = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("名前を入力してください")
       end
+
+      it "名前が21文字以上では登録できないこと" do
+        @user.name = "あいうえおかきくけこさしすせそたちつてとな"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("名前は20文字以内で入力してください")
+      end
   
-      it "emailが空では登録できないこと" do
+      it "Eメールが空では登録できないこと" do
         @user.email = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Eメールを入力してください")
       end
   
-      it "重複したemailが存在する場合登録できないこと" do
+      it "重複したEメールが存在する場合登録できないこと" do
         another_user = FactoryBot.build(:user)
         another_user.save
         @user.valid?
         expect(@user.errors.full_messages).to include("Eメールはすでに存在します")
       end
   
-      it "emailが@を含んでいない場合登録できないこと" do
+      it "Eメールが@を含んでいない場合登録できないこと" do
         @user.email = "aaaaaaaa"
         @user.valid?
         expect(@user.errors.full_messages).to include("Eメールは不正な値です")
