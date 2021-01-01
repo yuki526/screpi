@@ -11,7 +11,7 @@
 #### https://screpi.herokuapp.com/  
 email:    aaa@aaa  
 password: 1234qwer  
-トップページのログインフォームに入力済  
+※トップページのログインフォームに入力済  
 
 ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;開発環境
 ・ruby 2.6.5  
@@ -35,7 +35,12 @@ password: 1234qwer
     
 ![画面収録 2021-01-01 17 44 07 mov](https://user-images.githubusercontent.com/73642901/103438559-5b35be00-4c77-11eb-87f4-d71f6b1b90d8.gif)  
 
-### ・
+### ・コメント・おいしそう！（いいね）・お気に入り機能
+　- 投稿されたレシピにコメント・いいねをつけて、他のユーザーとコミュニケーションがとれます。また、お気に入り登録をするとマイページからも確認できるようになります。  
+ 
+![画面収録 2021-01-01 22 04 45 mov](https://user-images.githubusercontent.com/73642901/103439173-efa31f00-4c7d-11eb-80b2-170fff605b14.gif)  
+
+
 
 
 
