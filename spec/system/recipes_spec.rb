@@ -35,7 +35,7 @@ RSpec.describe "レシピ投稿", type: :system do
     end
   end
 
-  context 'レシピ投稿ができない時'
+  context 'レシピ投稿ができない時' do
     it 'ログインしていないとレシピ新規投稿ページに遷移できない' do
       # 新規投稿ページに遷移する
       visit new_recipe_path
@@ -95,7 +95,7 @@ RSpec.describe "レシピ削除", type: :system do
     @another_recipe = FactoryBot.create(:recipe, user_id: @another_user.id)
   end
 
-  context 'レシピ削除ができる時'
+  context 'レシピ削除ができる時' do
     it 'ログインしたユーザーは自分が投稿したレシピの削除ができる' do
       # レシピを投稿したユーザーでログインする
       sign_in(@recipe.user)
