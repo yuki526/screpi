@@ -34,8 +34,8 @@ class RecipesController < ApplicationController
       @form_recipe_ingredient.url = @form_recipe_ingredient.url.last(11)
     end
     
-    @form_recipe_ingredient.save
-    redirect_to root_path and return
+    new_recipe_id = @form_recipe_ingredient.save
+    redirect_to recipe_path(new_recipe_id) and return
   end
 
   def show
