@@ -2,7 +2,13 @@ sudo: required
 
 services: docker
 
+addons:
+  apt:
+    - google-chrome-stable
+    - chromium-chromedriver
+
 before_install:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
   - docker-compose up --build -d
 
 script:
