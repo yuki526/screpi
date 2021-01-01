@@ -8,7 +8,10 @@
 
 
 ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;URL
-#### https://screpi.herokuapp.com/
+#### https://screpi.herokuapp.com/  
+※email:    aaa@aaa  
+ password: 1234qwer  
+ トップページのログインフォームに入力済  
 
 ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;開発環境
 ・ruby 2.6.5  
@@ -28,9 +31,11 @@
 
 
 ### ・レシピ投稿、削除機能  
-　- レシピ名・サイトリンク・材料・手間度と材料や作り方の詳細が残せる自分用の自由記入欄があります。自由記入欄の内容は自分以外からは見えません。（他の人が投稿した気になるレシピは直接サイトに見に行ってね！）  
+　- レシピ名・サイトリンク・材料・手間度と材料や作り方の詳細が残せる自分用の自由記入欄があります。自由記入欄の内容は自分以外からは見えません。（他の人が投稿した気になるレシピは直接サイトに見に行こう！）  
     
-![画面収録 2021-01-01 17 44 07 mov](https://user-images.githubusercontent.com/73642901/103438559-5b35be00-4c77-11eb-87f4-d71f6b1b90d8.gif) 
+![画面収録 2021-01-01 17 44 07 mov](https://user-images.githubusercontent.com/73642901/103438559-5b35be00-4c77-11eb-87f4-d71f6b1b90d8.gif)  
+
+### ・
 
 
 
