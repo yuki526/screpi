@@ -27,10 +27,7 @@ RSpec.describe "レシピ投稿", type: :system do
       # 送信するとRecipeモデルのカウントが1上がることを確認する
       expect{find('input[name="commit"]').click}.to change { Recipe.count }.by(1)
 
-      # トップページに遷移する
-      expect(current_path).to eq root_path
-
-      # トップページには投稿したレシピのタイトルが存在する
+      # レシピ詳細ページには投稿したレシピのタイトルが存在する
       expect(page).to have_content(@recipe.title)
     end
   end

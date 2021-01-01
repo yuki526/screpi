@@ -27,6 +27,8 @@ RSpec.configure do |config|
         desired_capabilities: :chrome,
         args: ["headless"]
       }
+      Capybara.server_host = 'app'
+      Capybara.app_host='http://app'
     else
       driven_by :selenium_chrome_headless
     end
