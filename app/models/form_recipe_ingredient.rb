@@ -26,6 +26,8 @@ class FormRecipeIngredient
     ingredients_array.each do |i|
       RecipeIngredient.create(recipe_id: recipe.id, ingredient_id: i)
     end
+
+    return recipe.id
   end
 
 end
