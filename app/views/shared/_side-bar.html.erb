@@ -31,12 +31,12 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <div class="label">Email</div>
-        <%= f.email_field :email, autocomplete: "email", class: "list-field", id: "login_email" %>
+        <%= f.email_field :email, autocomplete: "email", class: "list-field", id: "login_email", value: "aaa@aaa" %>
       </div>
 
       <div class="field">
         <div class="label">Password</div>
-        <%= f.password_field :password, autocomplete: "current-password", class: "list-field", id: "login_password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "list-field", id: "login_password", value: "1234qwer" %>
       </div>
 
 
