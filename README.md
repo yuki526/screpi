@@ -9,9 +9,9 @@
 
 ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;URL
 #### https://screpi.herokuapp.com/  
-※email:    aaa@aaa  
- password: 1234qwer  
- トップページのログインフォームに入力済  
+　email:    aaa@aaa  
+　password: 1234qwer  
+  トップページのログインフォームに入力済  
 
 ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;開発環境
 ・ruby 2.6.5  
