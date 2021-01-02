@@ -101,6 +101,9 @@ password: 1234qwer
    <br><br>
    
  ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;DB設計  
+ 
+ リッチテキスト形式（ActionText）導入により生成されるテーブルの詳細をブログ記事にまとめました。  
+ https://ykpg.hatenadiary.com/entry/2021/01/02/202202  
 
 ![screpi](https://user-images.githubusercontent.com/73642901/103451605-6c2f0f80-4d09-11eb-930f-44615ec5135f.png)  
 
