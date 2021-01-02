@@ -25,7 +25,7 @@ password: 1234qwer
 
 ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;Screpiでなにができる？
 <img src="https://user-images.githubusercontent.com/73642901/103435562-a63dda00-4c53-11eb-86af-4110c54cd61a.png" width="700px"><img src="https://user-images.githubusercontent.com/73642901/103435583-f321b080-4c53-11eb-82df-1fe9333b57cb.png" width="200px">  
-#### Screpiはオリジナルレシピではなく、インターネット上（youtube、レシピサイト、料理研究家さんのブログなど）にあるおいしいレシピをスクラップブックのように自分用まとめたり、みんなでシェアしたりするための機能があります。  
+#### Screpiはオリジナルレシピではなく、インターネット上（youtube、レシピサイト、料理研究家さんのブログなど）にあるおいしいレシピをスクラップブックのように自分用にまとめたり、みんなでシェアしたりするための機能があります。  
  
 <br>
 
@@ -45,7 +45,22 @@ password: 1234qwer
  
 ![画面収録 2021-01-01 22 39 12 mov](https://user-images.githubusercontent.com/73642901/103439737-d781ce80-4c82-11eb-8fe2-4400df8c8f77.gif)  
 
-
+### ・検索機能  
+　- レシピ名・材料名からレシピを検索することができます。今後、「手間度」「引用元サイト」などもあわせた複数条件の検索も実装予定です。  
+ <レシピ名検索はメニューバーからいつでも可能＞  
+ 
+ ![画面収録 2021-01-02 8 37 05 mov](https://user-images.githubusercontent.com/73642901/103447958-d8901b80-4cd5-11eb-8b41-cb77a197210d.gif)  
+ 
+ ＜その他の検索は詳細検索画面から＞  
+ 
+ ![画面収録 2021-01-02 8 39 46 mov](https://user-images.githubusercontent.com/73642901/103447990-2e64c380-4cd6-11eb-9871-e00a9ac7e600.gif)　　
+ 
+ ### ・買い物リスト機能  
+  - ログイン後は画面左のお買物リストが常に表示されるので、いろんなレシピを見ながらリストへの追加が可能です。  
+  
+  ![画面収録 2021-01-02 9 08 08 mov](https://user-images.githubusercontent.com/73642901/103448251-2dce2c00-4cda-11eb-9289-2716652ea7c8.gif)  
+  
+  
 
 
 
