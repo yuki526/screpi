@@ -67,7 +67,25 @@ password: 1234qwer
    
    
    
-  ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;おすすめポイント  
+ ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;おすすめポイント  
+  
+  ・各レシピはすぐに動画再生・レシピ元のサイトへ飛ぶことができるので色んなサイトを探し回らずカンタンにレシピを見ることができます。  
+  ・レシピ投稿はリッチテキスト形式で投稿可能！直感的な操作で材料や手順をリスト化したり、画像を貼り付けたり、スクラップブックのようにカスタマイズができます。  
+  ・他のユーザーが投稿したレシピも、「お気に入りレシピ」に登録することで自由なメモを残してマイページに追加できます。  
+  
+  
+ ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;課題・今後の実装  
+ 
+ ・検索機能の充実化（手間度、引用元などもあわせた複数条件でレシピを検索できるようにする。  
+ ・「おいしそう！（いいね）」数をもとにしたレシピのランキング表示  
+ ・スマホ、タブレットからでも使いやすく表示するためのレスポンシブルデザイン  
+ 
+ ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;DB設計  
+ 
+ 
+ 
+ 
+  
   
   
   
