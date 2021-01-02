@@ -29,7 +29,7 @@ password: 1234qwer
   
   
 ## <img src="https://user-images.githubusercontent.com/73642901/103434591-0417f500-4c47-11eb-9c2d-6f51fc1bccb5.png" width="20px">&nbsp;Screpiでなにができる？
-<img src="https://user-images.githubusercontent.com/73642901/103435562-a63dda00-4c53-11eb-86af-4110c54cd61a.png" width="700px"><img src="https://user-images.githubusercontent.com/73642901/103435583-f321b080-4c53-11eb-82df-1fe9333b57cb.png" width="200px">  
+<img src="https://user-images.githubusercontent.com/73642901/103435562-a63dda00-4c53-11eb-86af-4110c54cd61a.png" width="550px"><img src="https://user-images.githubusercontent.com/73642901/103435583-f321b080-4c53-11eb-82df-1fe9333b57cb.png" width="150px">  
 #### Screpiはオリジナルレシピではなく、インターネット上（youtube、レシピサイト、料理研究家さんのブログなど）にあるおいしいレシピをスクラップブックのように自分用にまとめたり、みんなでシェアしたりするための機能があります。  
  
 <br><br>
