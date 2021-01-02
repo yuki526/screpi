@@ -9,17 +9,17 @@
       <div class="title">ブログ追加</div>
       <div class="related-recipe"> 関連レシピ：<%= link_to @recipe.title, recipe_path(@recipe.id), class:"recipe-show-link" %></div>
       <div class="new-blog-form">
-      <%= form_with model: [@recipe, @blog], local: true do |f| %>
-        <div class="label">title</div>
-        <%= f.text_field :title, class: "new-blog-form-field"%>
+        <%= form_with model: [@recipe, @blog], local: true do |f| %>
+          <div class="label">title</div>
+          <%= f.text_field :title, class: "new-blog-form-field"%>
 
-        <div class="label">本文</div>
-        <%= f.rich_text_area :content, class: "new-recipe-rich-text-form"%>
+          <div class="label">本文</div>
+          <%= f.rich_text_area :content, class: "new-recipe-rich-text-form"%>
 
 
-        <%= f.submit '追加', class: "blog-add-button" %>
-      <% end %>
-    </div>
+          <%= f.submit '追加', class: "blog-add-button" %>
+        <% end %>
+      </div>
 
     </div>
   
