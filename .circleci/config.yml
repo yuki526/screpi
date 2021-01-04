@@ -5,35 +5,11 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.5-stretch-node
-        environment:
-          - RAILS_ENV: 'test'
-      - image: circleci/mysql:5.6
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-          - MYSQL_ROOT_HOST: '%'
+      - image: circleci/ruby:2.6.3-stretch-node
     executor: ruby/default
     steps:
       - checkout
-
       - run:
-          name: install dependencies
-          command: |
-            gem install bundler -v 2.0.2
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
-
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-      # Database setup
-      - run: bundle exec rake db:create
-
-      # run tests
-      - run:
-          name: run tests
-          command: |
-            DISABLE_SPRING=true bundle exec rails rspec
-
-
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
