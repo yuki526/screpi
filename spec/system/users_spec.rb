@@ -5,7 +5,7 @@ RSpec.describe "新規登録", type: :system do
     @user = FactoryBot.build(:user)
   end
 
-  context 'ユーザー新規登録ができるとき' do 
+  context 'ユーザー新規登録ができるとき', js:true do 
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
       # トップページに移動する
       visit root_path
@@ -40,7 +40,7 @@ RSpec.describe "新規登録", type: :system do
   end
 
 
-  context 'ユーザー新規登録ができないとき' do
+  context 'ユーザー新規登録ができないとき', js:true do
     it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
       # トップページに移動する
       visit root_path
@@ -74,7 +74,7 @@ RSpec.describe 'ログイン', type: :system do
     @user = FactoryBot.create(:user)
   end
 
-  context 'ログインができるとき' do
+  context 'ログインができるとき', js:true do
     it '保存されているユーザーの情報と合致すればログインができる' do
       # トップページに移動する
       visit root_path
@@ -99,7 +99,7 @@ RSpec.describe 'ログイン', type: :system do
   end
 
 
-  context 'ログインができないとき' do
+  context 'ログインができないとき', js:true do
     it '保存されているユーザーの情報と合致しないとログインができない' do
       # トップページに移動する
       visit root_path
