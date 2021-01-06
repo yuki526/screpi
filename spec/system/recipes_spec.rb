@@ -6,7 +6,7 @@ RSpec.describe "レシピ投稿", type: :system do
     @recipe = FactoryBot.create(:recipe, user_id: @user.id)
   end
 
-  context 'レシピ新規投稿ができる時', js:true do
+  context 'レシピ新規投稿ができる時' do
     it 'ログインしたユーザーはレシピの新規投稿ができる' do
       # ログインする
       sign_in(@user)
@@ -32,7 +32,7 @@ RSpec.describe "レシピ投稿", type: :system do
     end
   end
 
-  context 'レシピ投稿ができない時', js:true do
+  context 'レシピ投稿ができない時' do
     it 'ログインしていないとレシピ新規投稿ページに遷移できない' do
       # 新規投稿ページに遷移する
       visit new_recipe_path
@@ -49,7 +49,7 @@ RSpec.describe "レシピ詳細", type: :system do
     @recipe = FactoryBot.create(:recipe, user_id: @user.id)
   end
 
-  it 'ログインしたユーザーはレシピ詳細ページに遷移してコメント投稿欄・コミュニケーション欄が表示される', js:true do
+  it 'ログインしたユーザーはレシピ詳細ページに遷移してコメント投稿欄・コミュニケーション欄が表示される' do
     # ログインする
     sign_in(@recipe.user)
 
@@ -67,7 +67,7 @@ RSpec.describe "レシピ詳細", type: :system do
     expect(page).to have_selector '.communications'
   end
 
-  it 'ログインしていないユーザーはレシピ詳細ページに遷移できるがコメント投稿欄・コミュニケーション欄は表示されない', js:true do
+  it 'ログインしていないユーザーはレシピ詳細ページに遷移できるがコメント投稿欄・コミュニケーション欄は表示されない' do
     # レシピの詳細ページへ遷移する
     visit recipe_path(@recipe)
 
@@ -92,7 +92,7 @@ RSpec.describe "レシピ削除", type: :system do
     @another_recipe = FactoryBot.create(:recipe, user_id: @another_user.id)
   end
 
-  context 'レシピ削除ができる時', js:true do
+  context 'レシピ削除ができる時' do
     it 'ログインしたユーザーは自分が投稿したレシピの削除ができる' do
       # レシピを投稿したユーザーでログインする
       sign_in(@recipe.user)
@@ -111,7 +111,7 @@ RSpec.describe "レシピ削除", type: :system do
     end
   end
 
-  context 'レシピ削除ができない時', js:true do
+  context 'レシピ削除ができない時' do
     it 'ログインしたユーザーは自分以外が投稿したレシピの削除ができない' do
       # レシピを投稿したユーザーとは別のユーザーでログインする
       sign_in(@user)
