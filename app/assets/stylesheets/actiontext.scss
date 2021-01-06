@@ -46,5 +46,11 @@ $subColor: rgb(151, 104, 41);
   color: $subColor;
   border: 1px solid $mainColor;
   border-radius: 5px;
-  height: 400px;
+  // height: 400px;
+}
+
+trix-editor {
+  min-height: 20em;
+  max-height: 20em;
+  overflow-y: auto;
 }
