@@ -1,67 +1,64 @@
-
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
 version: 2
+# jobsの中にタスクを定義。一番下のworkflowのjobsのなかで定義したタスクを使う。
 jobs:
+  # buildという名前のタスク定義
   build:
     docker:
-    - image: circleci/ruby:2.5.6-node-browsers
-      environment:
-        - BUNDLER_VERSION: 2.0.2
-        - RAILS_ENV: 'test'
-    - image: circleci/mysql:5.7
-      environment:
-        - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-        - MYSQL_ROOT_HOST: '127.0.0.1'
-
-    working_directory: ~/screpi  #自身のアプリディレクトリ名を設定  
+      # specify the version you desire here
+      - image: circleci/ruby:2.6.3-node-browsers
 
 
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
+    working_directory: ~/repo
+
+    # 実際の処理内容
     steps:
-    - checkout
+      - checkout
 
-    - restore_cache:
-        keys:
-        - v1-dependencies-{{ checksum "Gemfile.lock" }}
-        - v1-dependencies-
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      # runのたびに実行
+      - run:
+          name: install dependencies
+          command: |
+            gem install bundler -v 2.0.2
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
-    - run:
-        name: install dependencies
-        command: |
-          gem install bundler -v 2.0.2
-          bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-    - save_cache:
-        paths:
-        - ./vendor/bundle
-        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-    # Database setup
+      # Database setup
     - run: mv ./config/database.yml.ci ./config/database.yml
 
-    # Database setup
-    - run:
-        name: Databasesetup
-        command: |
-          bundle exec rake db:create
-          bundle exec rake db:schema:load
+      # Database setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
 
-    # run tests!
-    - run:
-        name: Run rspec
-        command: |
-          mkdir /tmp/test-results
-          TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-            circleci tests split --split-by=timings)"
+      # run tests
+      - run:
+          name: run tests
+          command: |
+            DISABLE_SPRING=true bundle exec rails test
 
-          bundle exec rspec \
-            --format progress \
-            --format RspecJunitFormatter \
-            --out /tmp/test-results/rspec.xml \
-            --format progress \
-            $TEST_FILES
 
-    # collect reports
-    - store_test_results:
-        path: /tmp/test-results
-    - store_artifacts:
-        path: /tmp/test-results
-        destination: test-results
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
+
