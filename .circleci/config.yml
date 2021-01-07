@@ -9,7 +9,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.6.3-node-browsers
+      - image: circleci/ruby:2.6.5-node-browsers
 
 
       # Specify service dependencies here if necessary
@@ -42,7 +42,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
-    - run: mv ./config/database.yml.ci ./config/database.yml
+      - run: mv ./config/database.yml.ci ./config/database.yml
 
       # Database setup
       - run: bundle exec rake db:create
