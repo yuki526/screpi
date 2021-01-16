@@ -33,20 +33,20 @@ jobs:
       - checkout
 
       - restore_cache:
-        keys:
-          - rails-demo-yarn-{{ checksum "yarn.lock" }}
-          - rails-demo-yarn-
+          keys:
+            - rails-demo-yarn-{{ checksum "yarn.lock" }}
+            - rails-demo-yarn-
 
       - run:
-        name: Yarn のインストール
-        command: yarn install --cache-folder ~/.cache/yarn
+          name: Yarn のインストール
+          command: yarn install --cache-folder ~/.cache/yarn
 
   # Yarn または Webpacker のキャッシュを保存します
 
       - save_cache:
-        key: rails-demo-yarn-{{ checksum "yarn.lock" }}
-        paths:
-          - ~/.cache/yarn
+          key: rails-demo-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
 
       # Download and cache dependencies
       - restore_cache:
@@ -54,6 +54,7 @@ jobs:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
+
       # runのたびに実行
       - run:
           name: install dependencies
