@@ -81,10 +81,4 @@ jobs:
             DISABLE_SPRING=true bundle exec rspec
 
 
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
 
