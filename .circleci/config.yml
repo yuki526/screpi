@@ -18,7 +18,6 @@ jobs:
         environment:
           - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
           - MYSQL_ROOT_HOST: '127.0.0.1'
-          # - MYSQL_DATABASE: screpi_test
 
 
       # Specify service dependencies here if necessary
@@ -38,7 +37,7 @@ jobs:
             - rails-demo-yarn-
 
       - run:
-          name: Yarn のインストール
+          name: install yarn
           command: yarn install --cache-folder ~/.cache/yarn
 
   # Yarn または Webpacker のキャッシュを保存します
