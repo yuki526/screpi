@@ -18,7 +18,7 @@ jobs:
         environment:
           - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
           - MYSQL_ROOT_HOST: '127.0.0.1'
-          - MYSQL_DATABASE: screpi_test
+          # - MYSQL_DATABASE: screpi_test
 
 
       # Specify service dependencies here if necessary
@@ -61,7 +61,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            DISABLE_SPRING=true bundle exec rails test
+            DISABLE_SPRING=true bundle exec rails rspec
 
 
       # collect reports
