@@ -61,7 +61,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            DISABLE_SPRING=true bundle exec rails rspec
+            DISABLE_SPRING=true bundle exec rspec
 
 
       # collect reports
