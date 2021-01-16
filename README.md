@@ -1,4 +1,4 @@
-[![<ORG_NAME>](https://circleci.com/gh/yuki526/screpi.svg?style=svg)](<LINK>)
+[![<ORG_NAME>](https://circleci.com/gh/yuki526/screpi.svg?style=svg)](<https://github.com/yuki526/screpi>)
 
 <img src="https://user-images.githubusercontent.com/73642901/103434015-54d72000-4c3e-11eb-911d-921089673309.png" width="250px">
      
